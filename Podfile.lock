@@ -1,0 +1,37 @@
+PODS:
+  - Alamofire (2.0.0)
+  - Locksmith (2.0.1)
+  - Moya (2.2.1):
+    - Moya/Core (= 2.2.1)
+  - Moya/Core (2.2.1):
+    - Alamofire (~> 2.0)
+  - Nimble (2.0.0-rc.3)
+  - Quick (0.6.0)
+  - SwiftyJSON (2.2.1)
+
+DEPENDENCIES:
+  - Locksmith
+  - Moya
+  - Nimble (= 2.0.0-rc.3)
+  - Quick (~> 0.6.0)
+  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`, branch `xcode7`)
+
+EXTERNAL SOURCES:
+  SwiftyJSON:
+    :branch: xcode7
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+CHECKOUT OPTIONS:
+  SwiftyJSON:
+    :commit: d4df13c66146a8e9c8d96c852746a08363003d36
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+SPEC CHECKSUMS:
+  Alamofire: 2f13548b29d25a58ecd91c9225fb51493e2b782b
+  Locksmith: 2c7bdc5c3a31a97d748791ad830310b1af4b8549
+  Moya: 017c5161f463d524fc73aa24b62c3740b71e0ca9
+  Nimble: 9dff98ee195ffe7351d3b2fb01d3a1420fd97948
+  Quick: 563686dbcf0ae0f9f7401ac9cd2d786ee1b7f3d7
+  SwiftyJSON: ae2d0a3d68025d136602a33c4ee215091ced3e33
+
+COCOAPODS: 0.38.2
