@@ -3,7 +3,8 @@ use_frameworks!
 
 pod 'Moya'
 pod 'Locksmith'
-pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git', :branch => 'xcode7'
+pod 'SwiftyJSON'
+pod 'JVFloatLabeledTextField'
 
 def testing_pods
   pod 'Quick', '~>0.6.0'
