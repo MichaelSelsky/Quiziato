@@ -18,14 +18,14 @@ public enum API {
 }
 
 extension API: MoyaTarget {
-    public var baseURL: NSURL { return NSURL(string: "http://quiz-staging.herokuapp.com")! }
+    public var baseURL: NSURL { return NSURL(string: "http://quiz-dev.herokuapp.com")! }
     
     public var path: String {
         switch self {
         case .Login(_, _):
             return "/oauth/token"
         case .Register(_, _):
-            return "/register"
+            return "/register/api"
         }
     }
     
@@ -39,6 +39,15 @@ extension API: MoyaTarget {
             return ["username": email, "password": password, "client_id":clientID, "client_secret":clientSecret, "grant_type":"password"]
         case .Register(let email, let password):
             return ["username": email, "password": password]
+        }
+    }
+    
+    public var parameterEncoding: Moya.ParameterEncoding {
+        switch self {
+        case .Login(_, _):
+            return .URL
+        case .Register(_, _):
+            return .JSON
         }
     }
     

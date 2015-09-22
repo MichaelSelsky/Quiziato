@@ -8,20 +8,36 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+let loginSegueIdentifier = "loginSegue"
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+class ViewController: UIViewController {
+    
+    var loggedInAccount: UserAccount?
     
     override func viewDidAppear(animated: Bool) {
-        self.performSegueWithIdentifier("loginSegue", sender: self)
+        super.viewDidAppear(animated)
+        if let loggedInAccount = loggedInAccount{
+            let alertController = UIAlertController(title: "Logged In", message: "Thanks for logging in \(loggedInAccount.account)", preferredStyle: .Alert)
+            let dismissAction = UIAlertAction(title: "Dismiss", style: .Cancel, handler: { (action) -> Void in
+                self.dismissViewControllerAnimated(true, completion: nil)
+            })
+            alertController.addAction(dismissAction )
+            self.presentViewController(alertController, animated: true, completion: nil)
+        } else {
+            self.performSegueWithIdentifier(loginSegueIdentifier, sender: self)
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == loginSegueIdentifier {
+            let destination = segue.destinationViewController as! LoginViewController
+            destination.loginCompletion = { (success: Bool, account: UserAccount?) in
+                if success {
+                    self.loggedInAccount = account
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                } 
+            }
+        }
     }
 
 

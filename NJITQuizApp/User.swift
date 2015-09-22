@@ -8,6 +8,7 @@
 
 import Foundation
 import Locksmith
+import SwiftyJSON
 
 let serviceName = "Quizzer"
 let UserAccountClientIDKey = "clientID", UserAccountUserIDKey = "userID", UserAccountTokenKey = "token"
