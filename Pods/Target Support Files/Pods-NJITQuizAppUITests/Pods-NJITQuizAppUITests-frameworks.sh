@@ -53,6 +53,7 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods-NJITQuizAppUITests/Alamofire.framework'
+  install_framework 'Pods-NJITQuizAppUITests/JVFloatLabeledTextField.framework'
   install_framework 'Pods-NJITQuizAppUITests/Locksmith.framework'
   install_framework 'Pods-NJITQuizAppUITests/Moya.framework'
   install_framework 'Pods-NJITQuizAppUITests/SwiftyJSON.framework'
@@ -61,6 +62,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods-NJITQuizAppUITests/Alamofire.framework'
+  install_framework 'Pods-NJITQuizAppUITests/JVFloatLabeledTextField.framework'
   install_framework 'Pods-NJITQuizAppUITests/Locksmith.framework'
   install_framework 'Pods-NJITQuizAppUITests/Moya.framework'
   install_framework 'Pods-NJITQuizAppUITests/SwiftyJSON.framework'
