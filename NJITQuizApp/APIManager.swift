@@ -18,7 +18,7 @@ public enum API {
 }
 
 extension API: MoyaTarget {
-    public var baseURL: NSURL { return NSURL(string: "http://quiz-dev.herokuapp.com")! }
+    public var baseURL: NSURL { return NSURL(string: "http://quiz-staging.herokuapp.com")! }
     
     public var path: String {
         switch self {
