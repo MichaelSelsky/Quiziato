@@ -9,6 +9,7 @@
 import UIKit
 
 let loginSegueIdentifier = "loginSegue"
+let socketConnection = SocketClient()
 
 class ViewController: UIViewController {
     
@@ -16,18 +17,23 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        if let loggedInAccount = loggedInAccount{
-            let alertController = UIAlertController(title: "Logged In", message: "Thanks for logging in \(loggedInAccount.account)", preferredStyle: .Alert)
-            let dismissAction = UIAlertAction(title: "Dismiss", style: .Cancel, handler: { (action) -> Void in
-                self.dismissViewControllerAnimated(true, completion: nil)
-            })
-            alertController.addAction(dismissAction )
-            self.presentViewController(alertController, animated: true, completion: nil)
-        } else {
-            self.performSegueWithIdentifier(loginSegueIdentifier, sender: self)
-        }
+//        if let loggedInAccount = loggedInAccount{
+//            let alertController = UIAlertController(title: "Logged In", message: "Thanks for logging in \(account!.account)", preferredStyle: .Alert)
+//            let dismissAction = UIAlertAction(title: "Dismiss", style: .Cancel, handler: { (action) -> Void in
+//                self.dismissViewControllerAnimated(true, completion: nil)
+//            })
+//            alertController.addAction(dismissAction )
+//            self.presentViewController(alertController, animated: true, completion: nil)
+//            connectToSocket()
+//            
+//        } else {
+//            self.performSegueWithIdentifier(loginSegueIdentifier, sender: self)
+//        }
     }
     
+    @IBAction func connectToSocketButtonPressed(sender: AnyObject) {
+        self.connectToSocket()
+    }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == loginSegueIdentifier {
             let destination = segue.destinationViewController as! LoginViewController
@@ -35,11 +41,20 @@ class ViewController: UIViewController {
                 if success {
                     self.loggedInAccount = account
                     self.dismissViewControllerAnimated(true, completion: nil)
+                    let alertController = UIAlertController(title: "Logged In", message: "Thanks for logging in \(account!.account)", preferredStyle: .Alert)
+                    let dismissAction = UIAlertAction(title: "Dismiss", style: .Cancel, handler: { (action) -> Void in
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                    })
+                    alertController.addAction(dismissAction )
+                    self.presentViewController(alertController, animated: true, completion: nil)
+
                 } 
             }
         }
     }
 
-
+    func connectToSocket() {
+        socketConnection.start()
+    }
 }
 
