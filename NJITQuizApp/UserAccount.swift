@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  UserAccount.swift
 //  NJITQuizApp
 //
 //  Created by MichaelSelsky on 9/15/15.
@@ -8,7 +8,6 @@
 
 import Foundation
 import Locksmith
-import SwiftyJSON
 
 let serviceName = "Quizzer"
 let UserAccountClientIDKey = "clientID", UserAccountUserIDKey = "userID", UserAccountTokenKey = "token"

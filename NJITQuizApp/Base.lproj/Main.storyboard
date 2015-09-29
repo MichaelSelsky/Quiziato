@@ -107,7 +107,8 @@
                                                     <action selector="loginButtonPressed:" destination="GY3-jC-lOO" eventType="touchUpInside" id="sBD-Xr-Xzu"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PzA-iw-DyV">
+                                            <button opaque="NO"
+hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PzA-iw-DyV">
                                                 <rect key="frame" x="284" y="0.0" width="276" height="30"/>
                                                 <animations/>
                                                 <state key="normal" title="Register"/>

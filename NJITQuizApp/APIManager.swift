@@ -9,7 +9,7 @@
 import Foundation
 import Moya
 
-let clientID: String = "ios_1"
+let clientID = "ios_1"
 let clientSecret = "ios_1_secret"
 
 public enum API {
@@ -25,7 +25,7 @@ extension API: MoyaTarget {
         case .Login(_, _):
             return "/oauth/token"
         case .Register(_, _):
-            return "/register/api"
+            return "/register"
         }
     }
     
@@ -52,7 +52,6 @@ extension API: MoyaTarget {
     }
     
     public var sampleData: NSData {
-        return NSData()
+        return NSData() 
     }
-    
 }
