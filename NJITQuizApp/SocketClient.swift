@@ -9,15 +9,49 @@
 import Foundation
 import Socket_IO_Client_Swift
 
+enum SocketMessage{
+    case SubmitAttendance(blob: NSData)
+}
+
+typealias SocketEvent = () -> ()
+
 class SocketClient {
-    var socket: SocketIOClient {
-        let s = SocketIOClient(socketURL: "http://quiz-dev.herokuapp.com")
+    let userToken: String
+    var socket: SocketIOClient = SocketIOClient(socketURL: "http://quiz-dev.herokuapp.com")
+    var connectedEvent: SocketEvent?
+    
+//        {
+//        let params: [String: AnyObject] = ["Authorization" : "\(self.userToken)"]
+//        let s = SocketIOClient(socketURL: "http://quiz-dev.herokuapp.com", opts: ["extraHeaders":params, "log":true])
+//        s.nsp = "/classroom"
+//        s.on("connect") { (data, ack) in
+//            print("Connected")
+//            self.submitAttendance("QRCode")
+//        }
+//        s.on("news") { (data, ack) in
+//            
+//        }
+//        s.on("disconnect") { (data, ack) -> Void in
+//            print("Disconnected")
+//        }
+//        s.on("error") { (data, ack) -> Void in
+//            print("error")
+//        }
+//        s.on("question") { (data, ack) -> Void in
+//            print(data![0])
+//        }
+//        
+//        return s
+//    }
+    
+    init(userToken: String) {
+        self.userToken = userToken
+        let params: [String: AnyObject] = ["Authorization" : "\(self.userToken)"]
+        let s = SocketIOClient(socketURL: "http://quiz-dev.herokuapp.com", opts: ["extraHeaders":params, "log":true])
         s.nsp = "/classroom"
         s.on("connect") { (data, ack) in
-            print ("Connected")
-            s.emit("attendance", "socket1")
-            let d = "Hi Trevor!".dataUsingEncoding(NSUTF8StringEncoding)
-            s.emit("data_test", d)
+            print("Connected")
+            self.connectedEvent?()
         }
         s.on("news") { (data, ack) in
             
@@ -31,12 +65,19 @@ class SocketClient {
         s.on("question") { (data, ack) -> Void in
             print(data![0])
         }
-        return s
-        
+        self.socket = s
     }
     func start() {
-        self.socket.connect(timeoutAfter: 60, withTimeoutHandler: nil)
-
+        print("Starting Connection")
+        self.socket.disconnect(fast: true)
+        self.socket.connect(timeoutAfter: 10, withTimeoutHandler: nil);
+    }
+    
+    func submitAttendance(blob: String) {
+        dispatch_after(1, dispatch_get_main_queue()) { () -> Void in
+            print("emitting")
+            self.socket.emit("attendance", blob)
+        }
     }
     
 }
