@@ -33,9 +33,7 @@ class LoginViewController: UIViewController {
         loginWithUsername(username, password: password, completion: loginCompletion)
     }
     @IBAction func registerButtonPressed(sender: AnyObject) {
-        let username = emailTextField.text!
-        let password = passwordLoginField.text!
-//        registerWithUsername(username, password: password)
+        
     }
     
     func registerWithUsername(username:String, password: String) {

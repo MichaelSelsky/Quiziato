@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -143,32 +144,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iZ6-59-hX5">
-                                <rect key="frame" x="20" y="28" width="0.0" height="142"/>
+                                <rect key="frame" x="28" y="28" width="544" height="141.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login to NJITQuizApp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvK-Of-Bsh">
-                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="28"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="544" height="27.5"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JAf-Ok-abY">
-                                        <rect key="frame" x="0.0" y="36" width="0.0" height="30"/>
+                                        <rect key="frame" x="0.0" y="35" width="544" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ycK-EY-LAS">
-                                        <rect key="frame" x="0.0" y="74" width="0.0" height="30"/>
+                                        <rect key="frame" x="0.0" y="73" width="544" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zKm-y9-dhG">
-                                        <rect key="frame" x="0.0" y="112" width="0.0" height="30"/>
+                                        <rect key="frame" x="0.0" y="111" width="544" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhO-SP-aSd">
-                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="544" height="30"/>
                                                 <animations/>
                                                 <state key="normal" title="Login"/>
                                                 <connections>
@@ -176,7 +177,7 @@
                                                 </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PzA-iw-DyV">
-                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="30"/>
+                                                <rect key="frame" x="544" y="0.0" width="0.0" height="30"/>
                                                 <animations/>
                                                 <state key="normal" title="Register"/>
                                                 <connections>
@@ -185,9 +186,6 @@
                                             </button>
                                         </subviews>
                                         <animations/>
-                                        <constraints>
-                                            <constraint firstItem="zhO-SP-aSd" firstAttribute="width" secondItem="PzA-iw-DyV" secondAttribute="width" id="t4r-Fn-38H"/>
-                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <animations/>
@@ -196,9 +194,9 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="iZ6-59-hX5" secondAttribute="trailing" id="2EU-rU-bCf"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="iZ6-59-hX5" secondAttribute="leading" id="fVa-A9-eom"/>
-                            <constraint firstItem="iZ6-59-hX5" firstAttribute="top" secondItem="yVr-Kz-3o5" secondAttribute="bottom" constant="8" id="gwu-NC-twH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iZ6-59-hX5" secondAttribute="trailing" constant="8" id="Haj-y8-D0A"/>
+                            <constraint firstItem="iZ6-59-hX5" firstAttribute="leading" secondItem="6cn-E7-vlF" secondAttribute="leadingMargin" constant="8" id="Uqe-sT-A2X"/>
+                            <constraint firstItem="iZ6-59-hX5" firstAttribute="top" secondItem="yVr-Kz-3o5" secondAttribute="bottom" constant="8" id="v4u-Z2-Mab"/>
                         </constraints>
                     </view>
                     <connections>
