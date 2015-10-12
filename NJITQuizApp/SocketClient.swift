@@ -75,8 +75,10 @@ class SocketClient {
     
     func submitAttendance(blob: String) {
         dispatch_after(1, dispatch_get_main_queue()) { () -> Void in
-            print("emitting")
-            self.socket.emit("attendance", blob)
+            print("emitting: \(blob)")
+            self.socket.emitWithAck("attendance", blob)(timeoutAfter: 0, callback: { (stuff) -> Void in
+                print(stuff)
+            })
         }
     }
     

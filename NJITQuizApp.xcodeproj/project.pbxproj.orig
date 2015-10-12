@@ -9,9 +9,12 @@
 /* Begin PBXBuildFile section */
 		245E8042F721E01BC55AFA61 /* Pods_NJITQuizAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4704EF5A7DE731C5A6353F70 /* Pods_NJITQuizAppUITests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4A9AA32AD7FC2D0D3F2514A8 /* Pods_NJITQuizAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B72AB8B64C44E4F3D69830 /* Pods_NJITQuizAppTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+<<<<<<< HEAD
 		4C067D6D1BB1CDFA0067FA65 /* SocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C067D6C1BB1CDFA0067FA65 /* SocketClient.swift */; settings = {ASSET_TAGS = (); }; };
+		4C089AFC1BA9C3E300F6ABDB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C089AFB1BA9C3E300F6ABDB /* User.swift */; };
+=======
 		4C089AFC1BA9C3E300F6ABDB /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C089AFB1BA9C3E300F6ABDB /* UserAccount.swift */; };
-		4C40F6131BC6DB1200F4D559 /* QRScanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40F6121BC6DB1200F4D559 /* QRScanningViewController.swift */; settings = {ASSET_TAGS = (); }; };
+>>>>>>> f877d101adeea8171ea1852f6256e46207019d32
 		4CB2B0251BA878D90070DC91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB2B0241BA878D90070DC91 /* AppDelegate.swift */; };
 		4CB2B0271BA878D90070DC91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB2B0261BA878D90070DC91 /* ViewController.swift */; };
 		4CB2B02A1BA878D90070DC91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CB2B0281BA878D90070DC91 /* Main.storyboard */; };
@@ -47,9 +50,12 @@
 		165E53B42E5B2DF4B966D89C /* Pods-NJITQuizAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NJITQuizAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NJITQuizAppUITests/Pods-NJITQuizAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		457D3020FDCDF531A12C3301 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		4704EF5A7DE731C5A6353F70 /* Pods_NJITQuizAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NJITQuizAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+<<<<<<< HEAD
 		4C067D6C1BB1CDFA0067FA65 /* SocketClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketClient.swift; sourceTree = "<group>"; };
+		4C089AFB1BA9C3E300F6ABDB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+=======
 		4C089AFB1BA9C3E300F6ABDB /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
-		4C40F6121BC6DB1200F4D559 /* QRScanningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QRScanningViewController.swift; path = ../QRScanningViewController.swift; sourceTree = "<group>"; };
+>>>>>>> f877d101adeea8171ea1852f6256e46207019d32
 		4CB2B0211BA878D90070DC91 /* NJITQuizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NJITQuizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CB2B0241BA878D90070DC91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CB2B0261BA878D90070DC91 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -126,9 +132,12 @@
 		4CB2B0231BA878D90070DC91 /* NJITQuizApp */ = {
 			isa = PBXGroup;
 			children = (
-				4C40F6121BC6DB1200F4D559 /* QRScanningViewController.swift */,
+<<<<<<< HEAD
 				4C067D6C1BB1CDFA0067FA65 /* SocketClient.swift */,
+				4C089AFB1BA9C3E300F6ABDB /* User.swift */,
+=======
 				4C089AFB1BA9C3E300F6ABDB /* UserAccount.swift */,
+>>>>>>> f877d101adeea8171ea1852f6256e46207019d32
 				4CB2B0241BA878D90070DC91 /* AppDelegate.swift */,
 				4CB2B0261BA878D90070DC91 /* ViewController.swift */,
 				4CB2B0691BA87F720070DC91 /* LoginViewController.swift */,
@@ -447,7 +456,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CB2B06A1BA87F720070DC91 /* LoginViewController.swift in Sources */,
-				4C40F6131BC6DB1200F4D559 /* QRScanningViewController.swift in Sources */,
 				4CB2B0271BA878D90070DC91 /* ViewController.swift in Sources */,
 				4CB2B06C1BA8878C0070DC91 /* APIManager.swift in Sources */,
 				4C089AFC1BA9C3E300F6ABDB /* UserAccount.swift in Sources */,

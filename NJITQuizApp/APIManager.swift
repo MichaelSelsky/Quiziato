@@ -33,7 +33,7 @@ extension API: MoyaTarget {
         return .POST
     }
     
-    public var parameters: [String: AnyObject] {
+    public var parameters: [String: AnyObject]? {
         switch self {
         case .Login(let email, let password):
             return ["username": email, "password": password, "client_id":clientID, "client_secret":clientSecret, "grant_type":"password"]

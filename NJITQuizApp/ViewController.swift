@@ -60,13 +60,18 @@ class ViewController: UIViewController {
                 } 
             }
         }
+        
+        if segue.identifier == "QRSegue" {
+            let destination = segue.destinationViewController as! QRScanningViewController
+            destination.socket = self.socketClient
+        }
     }
 
     func connectToSocket() {
-        self.socketClient.connectedEvent = {
-            self.socketClient.submitAttendance(self.roomTextField.text ?? "")
-        }
-        self.socketClient.start()
+//        self.socketClient.connectedEvent = {
+//            self.socketClient.submitAttendance(self.roomTextField.text ?? "")
+//        }
+//        self.socketClient.start()
     }
 }
 
