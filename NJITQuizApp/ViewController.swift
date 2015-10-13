@@ -22,18 +22,18 @@ class ViewController: UIViewController {
         if let loggedInAccountID = loggedInAccountID where loggedInAccountID.characters.count > 0 {
             self.loggedInAccount = UserAccount.fetchAccount(loggedInAccountID)
         }
+        
+//        let gradientLayer = CAGradientLayer()
+//        gradientLayer.frame = self.view.frame
+//        gradientLayer.colors = [UIColor(red: 255.0/255.0, green: 227.0/255.0, blue: 55/255.0, alpha: 1.0), UIColor(red: 255.0/255.0, green: 237.0/255.0, blue: 131.0/255.0, alpha: 1.0)];
+//        self.view.layer.addSublayer(gradientLayer)
+        
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         if let loggedInAccount = loggedInAccount{
-            let alertController = UIAlertController(title: "Logged In", message: "Thanks for logging in \(loggedInAccount.account)", preferredStyle: .Alert)
             NSUserDefaults.standardUserDefaults().setObject(loggedInAccount.account, forKey: "loggedInID")
-            let dismissAction = UIAlertAction(title: "Dismiss", style: .Cancel, handler: { (action) -> Void in
-                self.dismissViewControllerAnimated(true, completion: nil)
-            })
-            alertController.addAction(dismissAction )
-            self.presentViewController(alertController, animated: true, completion: nil)
             self.socketClient = SocketClient(userToken: loggedInAccount.token)
         } else {
             self.performSegueWithIdentifier(loginSegueIdentifier, sender: self)
@@ -41,7 +41,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func connectToSocketButtonPressed(sender: AnyObject) {
-        self.connectToSocket()
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == loginSegueIdentifier {
@@ -65,13 +64,6 @@ class ViewController: UIViewController {
             let destination = segue.destinationViewController as! QRScanningViewController
             destination.socket = self.socketClient
         }
-    }
-
-    func connectToSocket() {
-//        self.socketClient.connectedEvent = {
-//            self.socketClient.submitAttendance(self.roomTextField.text ?? "")
-//        }
-//        self.socketClient.start()
     }
 }
 
