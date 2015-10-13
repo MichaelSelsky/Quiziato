@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     
     var loggedInAccount: UserAccount?
     var socketClient: SocketClient!
+    var hasCheckedLogin: Bool = false
     
     @IBOutlet weak var roomTextField: UITextField!
     override func viewDidLoad() {
@@ -23,20 +24,18 @@ class ViewController: UIViewController {
             self.loggedInAccount = UserAccount.fetchAccount(loggedInAccountID)
         }
         
-//        let gradientLayer = CAGradientLayer()
-//        gradientLayer.frame = self.view.frame
-//        gradientLayer.colors = [UIColor(red: 255.0/255.0, green: 227.0/255.0, blue: 55/255.0, alpha: 1.0), UIColor(red: 255.0/255.0, green: 237.0/255.0, blue: 131.0/255.0, alpha: 1.0)];
-//        self.view.layer.addSublayer(gradientLayer)
-        
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        if let loggedInAccount = loggedInAccount{
-            NSUserDefaults.standardUserDefaults().setObject(loggedInAccount.account, forKey: "loggedInID")
-            self.socketClient = SocketClient(userToken: loggedInAccount.token)
-        } else {
-            self.performSegueWithIdentifier(loginSegueIdentifier, sender: self)
+        if !hasCheckedLogin {
+            if let loggedInAccount = loggedInAccount{
+                NSUserDefaults.standardUserDefaults().setObject(loggedInAccount.account, forKey: "loggedInID")
+                self.socketClient = SocketClient(userToken: loggedInAccount.token)
+                hasCheckedLogin = true
+            } else {
+                self.performSegueWithIdentifier(loginSegueIdentifier, sender: self)
+            }
         }
     }
     
@@ -47,6 +46,7 @@ class ViewController: UIViewController {
             let destination = segue.destinationViewController as! LoginViewController
             destination.loginCompletion = { (success: Bool, account: UserAccount?) in
                 if success {
+                    self.hasCheckedLogin = false
                     self.loggedInAccount = account
                     self.dismissViewControllerAnimated(true, completion: nil)
                     let alertController = UIAlertController(title: "Logged In", message: "Thanks for logging in \(account!.account)", preferredStyle: .Alert)
