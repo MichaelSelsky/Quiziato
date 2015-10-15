@@ -21,6 +21,10 @@
 		4CB2B0451BA878DA0070DC91 /* NJITQuizAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB2B0441BA878DA0070DC91 /* NJITQuizAppUITests.swift */; };
 		4CB2B06A1BA87F720070DC91 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB2B0691BA87F720070DC91 /* LoginViewController.swift */; };
 		4CB2B06C1BA8878C0070DC91 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB2B06B1BA8878C0070DC91 /* APIManager.swift */; };
+		4CBC74461BD005280000AFC4 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBC74451BD005280000AFC4 /* QuestionTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		4CBC74481BD005380000AFC4 /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBC74471BD005380000AFC4 /* AnswerTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		4CBC744A1BD006110000AFC4 /* ClassroomQuizTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBC74491BD006110000AFC4 /* ClassroomQuizTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		4CBC744C1BD006940000AFC4 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBC744B1BD006940000AFC4 /* Question.swift */; settings = {ASSET_TAGS = (); }; };
 		4CD93AAA1BB4698C00522E63 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CD93AA91BB4698C00522E63 /* Storyboard.storyboard */; settings = {ASSET_TAGS = (); }; };
 		4CEE187C1BCBF9350063ED45 /* QorumLogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE187B1BCBF9350063ED45 /* QorumLogs.swift */; settings = {ASSET_TAGS = (); }; };
 		F94B911D1CF194013F1D1333 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8907EAA4D2B0666734E038E /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -66,6 +70,10 @@
 		4CB2B0461BA878DA0070DC91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CB2B0691BA87F720070DC91 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4CB2B06B1BA8878C0070DC91 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		4CBC74451BD005280000AFC4 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
+		4CBC74471BD005380000AFC4 /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
+		4CBC74491BD006110000AFC4 /* ClassroomQuizTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassroomQuizTableViewController.swift; sourceTree = "<group>"; };
+		4CBC744B1BD006940000AFC4 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		4CD93AA91BB4698C00522E63 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		4CEE187B1BCBF9350063ED45 /* QorumLogs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QorumLogs.swift; path = ../QorumLogs.swift; sourceTree = "<group>"; };
 		55B72AB8B64C44E4F3D69830 /* Pods_NJITQuizAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NJITQuizAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +145,10 @@
 				4CB2B0691BA87F720070DC91 /* LoginViewController.swift */,
 				4CB2B06B1BA8878C0070DC91 /* APIManager.swift */,
 				4CB2B0281BA878D90070DC91 /* Main.storyboard */,
+				4CBC74491BD006110000AFC4 /* ClassroomQuizTableViewController.swift */,
+				4CBC744B1BD006940000AFC4 /* Question.swift */,
+				4CBC74471BD005380000AFC4 /* AnswerTableViewCell.swift */,
+				4CBC74451BD005280000AFC4 /* QuestionTableViewCell.swift */,
 				4CD93AA91BB4698C00522E63 /* Storyboard.storyboard */,
 				4CB2B02B1BA878D90070DC91 /* Assets.xcassets */,
 				4CB2B02D1BA878D90070DC91 /* LaunchScreen.storyboard */,
@@ -449,12 +461,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CBC74461BD005280000AFC4 /* QuestionTableViewCell.swift in Sources */,
 				4CB2B06A1BA87F720070DC91 /* LoginViewController.swift in Sources */,
 				4C40F6131BC6DB1200F4D559 /* QRScanningViewController.swift in Sources */,
+				4CBC74481BD005380000AFC4 /* AnswerTableViewCell.swift in Sources */,
 				4CB2B0271BA878D90070DC91 /* ViewController.swift in Sources */,
 				4CEE187C1BCBF9350063ED45 /* QorumLogs.swift in Sources */,
 				4CB2B06C1BA8878C0070DC91 /* APIManager.swift in Sources */,
+				4CBC744A1BD006110000AFC4 /* ClassroomQuizTableViewController.swift in Sources */,
 				4C089AFC1BA9C3E300F6ABDB /* UserAccount.swift in Sources */,
+				4CBC744C1BD006940000AFC4 /* Question.swift in Sources */,
 				4CB2B0251BA878D90070DC91 /* AppDelegate.swift in Sources */,
 				4C067D6D1BB1CDFA0067FA65 /* SocketClient.swift in Sources */,
 			);

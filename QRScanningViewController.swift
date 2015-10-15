@@ -58,7 +58,12 @@ class QRScanningViewController: UIViewController, AVCaptureMetadataOutputObjects
         
         captureSession?.startRunning()
     }
-    
+    /*
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.performSegueWithIdentifier("BeginClassSegue", sender: self)
+    }
+    */
     
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
         if self.qrString == nil {
@@ -82,7 +87,7 @@ class QRScanningViewController: UIViewController, AVCaptureMetadataOutputObjects
                     self.socket.connectedEvent = {
                         self.socket.submitAttendance(metadataObj.stringValue)
                         dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                            self.dismissViewControllerAnimated(true, completion: nil)
+                            self.performSegueWithIdentifier("BeginClassSegue", sender: self)
                         })
                     }
                     self.socket.start()
@@ -92,6 +97,14 @@ class QRScanningViewController: UIViewController, AVCaptureMetadataOutputObjects
         }
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "BeginClassSegue" {
+            let navVc = segue.destinationViewController as! UINavigationController
+            let classVC = navVc.viewControllers[0] as! ClassroomQuizTableViewController
+            classVC.socketConnection = self.socket
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
