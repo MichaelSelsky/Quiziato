@@ -40,6 +40,9 @@
                                         <state key="normal" title="Logout">
                                             <color key="titleColor" red="0.15410047769546509" green="0.41306763887405396" blue="0.69063264131546021" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="GY3-jC-lOO" kind="presentation" identifier="loginSegue" id="Zh8-zs-efE"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <animations/>
@@ -62,9 +65,6 @@
                             <constraint firstItem="hkN-HZ-Jkt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zBt-Mo-gTY"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <segue destination="GY3-jC-lOO" kind="presentation" identifier="loginSegue" id="fTc-HY-ayq"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -311,7 +311,13 @@
                             <outlet property="delegate" destination="gG6-z5-Fcw" id="J8a-bY-pBv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="lvt-zt-PZW"/>
+                    <navigationItem key="navigationItem" id="lvt-zt-PZW">
+                        <barButtonItem key="leftBarButtonItem" title="Dismiss" id="qdn-Q8-qPE">
+                            <connections>
+                                <action selector="dismiss:" destination="gG6-z5-Fcw" id="ROY-CW-r1V"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ki-l4-4Ko" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

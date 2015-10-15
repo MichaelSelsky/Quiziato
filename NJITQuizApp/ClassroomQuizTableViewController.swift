@@ -24,6 +24,10 @@ class ClassroomQuizTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.socketConnection.questionCallback = { (question) in
+            self.question = question
+        }
+        
         NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: Selector("updateTimer"), userInfo: nil, repeats: true)
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
@@ -31,9 +35,26 @@ class ClassroomQuizTableViewController: UITableViewController {
         
     }
 
+    @IBAction func dismiss(sender: AnyObject) {
+        self.navigationController?.dismissViewControllerAnimated(true, completion: { () -> Void in
+            self.socketConnection.disconnect()
+        })
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        switch indexPath.section {
+        case 0:
+            return
+        case 1:
+            print(self.question?.answers[indexPath.row
+            ])
+        default:
+            return
+        }
     }
     
     func updateTimer() {
@@ -46,6 +67,7 @@ class ClassroomQuizTableViewController: UITableViewController {
             timerLabel.text = "\(interval)"
         } else {
             timerLabel.text = ""
+            self.question = nil
         }
     }
     
@@ -78,6 +100,7 @@ class ClassroomQuizTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCellWithIdentifier("QuestionCell") as! QuestionTableViewCell
             cell.questionLabel.text = self.question?.prompt
             self.timerLabel = cell.timeLeftLabel
+            cell.userInteractionEnabled = false
             return cell
         case 1:
             let cell = tableView.dequeueReusableCellWithIdentifier("AnswerCell") as! AnswerTableViewCell

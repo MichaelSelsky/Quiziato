@@ -55,7 +55,9 @@ class QRScanningViewController: UIViewController, AVCaptureMetadataOutputObjects
         qrCodeFrameView?.layer.borderWidth = 2
         view.addSubview(qrCodeFrameView!)
         view.bringSubviewToFront(qrCodeFrameView!)
-        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         captureSession?.startRunning()
     }
     /*
@@ -79,8 +81,9 @@ class QRScanningViewController: UIViewController, AVCaptureMetadataOutputObjects
             if metadataObj.type == AVMetadataObjectTypeQRCode {
                 // If the found metadata is equal to the QR code metadata then update the status label's text and set the bounds
                 let barCodeObject = videoPreviewLayer?.transformedMetadataObjectForMetadataObject(metadataObj as AVMetadataMachineReadableCodeObject) as! AVMetadataMachineReadableCodeObject
-                qrCodeFrameView?.frame = barCodeObject.bounds;
-                
+                UIView.animateWithDuration(0.35, animations: { () -> Void in
+                     qrCodeFrameView?.frame = barCodeObject.bounds;
+                })
                 if metadataObj.stringValue != nil {
                     self.qrString = metadataObj.stringValue
                     print(metadataObj.stringValue)
@@ -117,6 +120,7 @@ class QRScanningViewController: UIViewController, AVCaptureMetadataOutputObjects
     
     override func viewWillDisappear(animated: Bool) {
         self.captureSession?.stopRunning()
+        self.qrCodeFrameView?.frame = CGRectZero
     }
     /*
     // MARK: - Navigation

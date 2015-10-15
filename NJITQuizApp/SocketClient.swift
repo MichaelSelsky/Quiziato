@@ -8,17 +8,20 @@
 
 import Foundation
 import Socket_IO_Client_Swift
+import SwiftyJSON
 
 enum SocketMessage{
     case SubmitAttendance(blob: NSData)
 }
 
 typealias SocketEvent = () -> ()
+typealias QuestionRecievedCallback = (MultipleChoiceQuestion) -> ()
 
 class SocketClient {
     let userToken: String
     var socket: SocketIOClient = SocketIOClient(socketURL: "http://quiz-dev.herokuapp.com")
     var connectedEvent: SocketEvent?
+    var questionCallback: QuestionRecievedCallback?
     
 //        {
 //        let params: [String: AnyObject] = ["Authorization" : "\(self.userToken)"]
@@ -62,8 +65,11 @@ class SocketClient {
         s.on("error") { (data, ack) -> Void in
             print("error")
         }
-        s.on("question") { (data, ack) -> Void in
-            print(data![0])
+        s.on("assignQuestion") { (data, ack) -> Void in
+            if let data = data {
+                let question = self.parseQuestion(data)
+                self.questionCallback?(question)
+            }
         }
         self.socket = s
     }
@@ -82,4 +88,35 @@ class SocketClient {
         }
     }
     
+    
+    func parseQuestion(data: NSArray) -> MultipleChoiceQuestion {
+        let json = JSON(data[0])
+        let dueAt = json["dueAt"].stringValue
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        let posix = NSLocale(localeIdentifier: "en_US_POSIX")
+        dateFormatter.locale = posix
+        
+        let dueDate = dateFormatter.dateFromString(dueAt)
+        
+        let rawQuestion = json["question"]
+        let prompt = rawQuestion["prompt"].stringValue
+        let options = rawQuestion["options"]
+        var answers = [MultipleChoiceAnswer]()
+        for (index, option):(String, JSON) in options {
+            let answerText = option["text"].stringValue
+            let ans = MultipleChoiceAnswer(text: answerText, answerID: index)
+            answers.append(ans)
+        }
+        
+        let question = MultipleChoiceQuestion(prompt: prompt, dueTime: dueDate!, answers: answers)
+        
+        return question
+        
+    }
+    
+    func disconnect() {
+        self.socket.disconnect(fast: false)
+    }
 }
