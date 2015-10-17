@@ -12,9 +12,7 @@ class ClassroomQuizTableViewController: UITableViewController {
 
     var question: MultipleChoiceQuestion? {
         didSet {
-            if self.question != nil {
-                self.tableView.reloadData()
-            }
+            self.tableView.reloadData()
         }
     }
     
