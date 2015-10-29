@@ -60,12 +60,6 @@ class QRScanningViewController: UIViewController, AVCaptureMetadataOutputObjects
     override func viewWillAppear(animated: Bool) {
         captureSession?.startRunning()
     }
-    /*
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        self.performSegueWithIdentifier("BeginClassSegue", sender: self)
-    }
-    */
     
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
         if self.qrString == nil {
@@ -121,15 +115,6 @@ class QRScanningViewController: UIViewController, AVCaptureMetadataOutputObjects
     override func viewWillDisappear(animated: Bool) {
         self.captureSession?.stopRunning()
         self.qrCodeFrameView?.frame = CGRectZero
+        self.qrString = nil
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

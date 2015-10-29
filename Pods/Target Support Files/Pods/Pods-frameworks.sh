@@ -53,6 +53,7 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods/Alamofire.framework'
+  install_framework 'Pods/DZNEmptyDataSet.framework'
   install_framework 'Pods/JVFloatLabeledTextField.framework'
   install_framework 'Pods/Locksmith.framework'
   install_framework 'Pods/Moya.framework'
@@ -61,6 +62,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods/Alamofire.framework'
+  install_framework 'Pods/DZNEmptyDataSet.framework'
   install_framework 'Pods/JVFloatLabeledTextField.framework'
   install_framework 'Pods/Locksmith.framework'
   install_framework 'Pods/Moya.framework'

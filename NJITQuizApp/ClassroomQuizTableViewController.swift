@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import DZNEmptyDataSet
 
-class ClassroomQuizTableViewController: UITableViewController {
+class ClassroomQuizTableViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
+    
+    var className: String?
+    var instructorName: String?
+
 
     var question: MultipleChoiceQuestion? {
         didSet {
@@ -22,6 +27,9 @@ class ClassroomQuizTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.emptyDataSetDelegate = self
+        self.tableView.emptyDataSetSource = self
+        
         self.socketConnection.questionCallback = { (question) in
             self.question = question
         }
@@ -31,10 +39,23 @@ class ClassroomQuizTableViewController: UITableViewController {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 44.0
         
+        NSNotificationCenter.defaultCenter().addObserverForName("attendanceEvent", object: nil, queue: NSOperationQueue.mainQueue()) { (note) -> Void in
+            let classInfo = note.object?.firstObject as! [String: AnyObject]
+            let course = classInfo["course"] as! [String: AnyObject]
+            self.className = course["title"] as? String
+            
+            let instructor = classInfo["instructor"] as! [String: AnyObject]
+            let instructorNames = instructor["name"] as! [String: AnyObject]
+            self.instructorName = instructorNames["full"] as? String
+            
+            self.tableView.reloadData()
+            
+        }
+        
     }
 
     @IBAction func dismiss(sender: AnyObject) {
-        self.navigationController?.dismissViewControllerAnimated(true, completion: { () -> Void in
+        self.parentViewController?.dismissViewControllerAnimated(true, completion: { () -> Void in
             self.socketConnection.disconnect()
         })
     }
@@ -111,50 +132,32 @@ class ClassroomQuizTableViewController: UITableViewController {
             return cell
         }
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    // MARK: - Empty Data Set
+    
+    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: "PencilIcon")
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        return NSAttributedString(string: self.className ?? "")
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+    
+    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        return NSAttributedString(string: self.instructorName ?? "")
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    
+    
+    func imageAnimationForEmptyDataSet(scrollView: UIScrollView!) -> CAAnimation! {
+        let animation = CABasicAnimation(keyPath: "transform")
+        animation.fromValue = NSValue(CATransform3D: CATransform3DIdentity)
+        animation.toValue = NSValue(CATransform3D: CATransform3DMakeRotation(CGFloat(M_PI_2), 0.0, 0.0, 1.0))
+        animation.duration = 0.25
+        animation.cumulative = true
+        animation.repeatCount = MAXFLOAT
+        
+        return animation
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

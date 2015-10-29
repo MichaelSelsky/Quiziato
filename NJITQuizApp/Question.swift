@@ -8,6 +8,15 @@
 
 import Foundation
 
+struct Course {
+    let name: String
+    let instructor: Instructor
+}
+
+struct Instructor {
+    let name: String
+}
+
 struct MultipleChoiceQuestion {
     let prompt: String
     let dueTime: NSDate

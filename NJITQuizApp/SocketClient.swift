@@ -19,38 +19,14 @@ typealias QuestionRecievedCallback = (MultipleChoiceQuestion) -> ()
 
 class SocketClient {
     let userToken: String
-    var socket: SocketIOClient = SocketIOClient(socketURL: "http://quiz-dev.herokuapp.com")
+    var socket: SocketIOClient = SocketIOClient(socketURL: "http://quiz-prod.herokuapp.com")
     var connectedEvent: SocketEvent?
     var questionCallback: QuestionRecievedCallback?
-    
-//        {
-//        let params: [String: AnyObject] = ["Authorization" : "\(self.userToken)"]
-//        let s = SocketIOClient(socketURL: "http://quiz-dev.herokuapp.com", opts: ["extraHeaders":params, "log":true])
-//        s.nsp = "/classroom"
-//        s.on("connect") { (data, ack) in
-//            print("Connected")
-//            self.submitAttendance("QRCode")
-//        }
-//        s.on("news") { (data, ack) in
-//            
-//        }
-//        s.on("disconnect") { (data, ack) -> Void in
-//            print("Disconnected")
-//        }
-//        s.on("error") { (data, ack) -> Void in
-//            print("error")
-//        }
-//        s.on("question") { (data, ack) -> Void in
-//            print(data![0])
-//        }
-//        
-//        return s
-//    }
     
     init(userToken: String) {
         self.userToken = userToken
         let params: [String: AnyObject] = ["Authorization" : "\(self.userToken)"]
-        let s = SocketIOClient(socketURL: "http://quiz-dev.herokuapp.com", opts: ["extraHeaders":params, "log":true])
+        let s = SocketIOClient(socketURL: "http://quiz-prod.herokuapp.com", opts: ["extraHeaders":params, "log":true])
         s.nsp = "/classroom"
         s.on("connect") { (data, ack) in
             print("Connected")
@@ -69,6 +45,12 @@ class SocketClient {
             if let data = data {
                 let question = self.parseQuestion(data)
                 self.questionCallback?(question)
+                let notification = UILocalNotification()
+                notification.fireDate = NSDate()
+                notification.alertTitle = question.prompt
+                notification.alertAction = "Answer question"
+                
+                UIApplication.sharedApplication().scheduleLocalNotification(notification)
             }
         }
         self.socket = s
@@ -84,6 +66,8 @@ class SocketClient {
             print("emitting: \(blob)")
             self.socket.emitWithAck("attendance", blob)(timeoutAfter: 0, callback: { (stuff) -> Void in
                 print(stuff)
+                let notification = NSNotification(name: "attendanceEvent", object: stuff)
+                NSNotificationCenter.defaultCenter().postNotification(notification)
             })
         }
     }

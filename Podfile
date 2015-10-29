@@ -6,6 +6,7 @@ pod 'Locksmith'
 pod 'SwiftyJSON'
 pod 'JVFloatLabeledTextField'
 pod 'Socket.IO-Client-Swift', '~> 3.0.2'
+pod 'DZNEmptyDataSet'
 
 def testing_pods
   pod 'Quick', '~>0.6.0'

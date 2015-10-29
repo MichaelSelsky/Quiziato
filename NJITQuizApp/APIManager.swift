@@ -11,6 +11,8 @@ import Moya
 
 let clientID = "ios_1"
 let clientSecret = "ios_1_secret"
+let productionURL = "http://quiz-prod.herokuapp.com"
+let devURL = "http://quiz-dev.herokuapp.com"
 
 public enum API {
     case Login((String, String))
@@ -18,7 +20,7 @@ public enum API {
 }
 
 extension API: MoyaTarget {
-    public var baseURL: NSURL { return NSURL(string: "http://quiz-dev.herokuapp.com")! }
+    public var baseURL: NSURL { return NSURL(string: productionURL)! }
     
     public var path: String {
         switch self {
