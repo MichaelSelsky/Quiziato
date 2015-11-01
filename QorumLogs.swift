@@ -18,7 +18,7 @@ struct QorumLogs {
     //==========================================================================================================
     // MARK: - Public Methods
     //==========================================================================================================
-    
+ 
     /// Ignores all logs from other files
     static func onlyShowThisFile<T>(fileName: T) {
         minimumLogLevelShown = 1
@@ -27,7 +27,7 @@ struct QorumLogs {
             print(ColorLog.purple("QorumDebug: Only Showing: \(name)"))
             return
         }
-        
+
         var classString = ""
         if let obj: AnyObject = fileName as? AnyObject {
             classString = String(obj.dynamicType)
@@ -54,7 +54,7 @@ struct QorumLogs {
     //==========================================================================================================
     // MARK: - Private Methods
     //==========================================================================================================
-    
+
     private static func shouldPrintLine(level level: Int, fileName: String) -> Bool {
         if !QorumLogs.enabled {
             return false
@@ -136,7 +136,7 @@ struct QorumOnlineLogs {
         request.HTTPMethod = "POST"
         request.setValue("application/x-www-form-urlencoded; charset=utf-8", forHTTPHeaderField: "Content-Type")
         request.HTTPBody = postData.dataUsingEncoding(NSUTF8StringEncoding)
-        NSURLConnection(request: request, delegate: nil, startImmediately: true)
+        NSURLConnection(request: request, delegate: nil)?.start()
         
         let printText = "OnlineLogs: \(extraInformation.description) - \(versionLevel) - \(classInformation) - \(text)"
         print(" \(ColorLog.purple(printText))\n", terminator: "")
