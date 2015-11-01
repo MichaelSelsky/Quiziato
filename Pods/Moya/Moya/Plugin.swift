@@ -6,7 +6,14 @@ import Foundation
 ///     - log network requests
 ///     - hide and show a network avtivity indicator 
 ///     - inject additional information into a request
-public class Plugin<Target: MoyaTarget> {
+public class Plugin<Target: MoyaTarget>: NSObject {
+
+    // Note:
+    //
+    // Need an override init() here to satisfy the Swift compiler and let subclasses external to the Moya framework exist.
+    public override init() {
+        super.init()
+    }
     
     // NOTE:
     //
@@ -24,12 +31,12 @@ public class Plugin<Target: MoyaTarget> {
     // This does not work, because `plugins` is now unable to infer the actual type of the typealias `T`.
 
     /// Called immediately before a request is sent over the network (or stubbed).
-    func willSendRequest(request: MoyaRequest, provider: MoyaProvider<Target>, target: Target) {
+    public func willSendRequest(request: MoyaRequest, provider: MoyaProvider<Target>, target: Target) {
         // Should be overridden if necessary
     }
 
     // Called after a response has been received, but before the MoyaProvider has invoked its completion handler.
-    func didReceiveResponse(data: NSData?, statusCode: Int?, response: NSURLResponse?, error: ErrorType?, provider: MoyaProvider<Target>, target: Target) {
+    public func didReceiveResponse(data: NSData?, statusCode: Int?, response: NSURLResponse?, error: ErrorType?, provider: MoyaProvider<Target>, target: Target) {
         // Should be overridden if necessary
     }
 }
