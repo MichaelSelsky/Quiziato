@@ -76,7 +76,7 @@ class QRScanningViewController: UIViewController, AVCaptureMetadataOutputObjects
                 // If the found metadata is equal to the QR code metadata then update the status label's text and set the bounds
                 let barCodeObject = videoPreviewLayer?.transformedMetadataObjectForMetadataObject(metadataObj as AVMetadataMachineReadableCodeObject) as! AVMetadataMachineReadableCodeObject
                 UIView.animateWithDuration(0.35, animations: { () -> Void in
-                     qrCodeFrameView?.frame = barCodeObject.bounds;
+                     self.qrCodeFrameView?.frame = barCodeObject.bounds;
                 })
                 if metadataObj.stringValue != nil {
                     self.qrString = metadataObj.stringValue
