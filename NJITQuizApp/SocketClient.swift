@@ -19,14 +19,14 @@ typealias QuestionRecievedCallback = (MultipleChoiceQuestion) -> ()
 
 class SocketClient {
     let userToken: String
-    var socket: SocketIOClient = SocketIOClient(socketURL: "http://quiz-prod.herokuapp.com")
+    var socket: SocketIOClient = SocketIOClient(socketURL: "http://quiz-dev.herokuapp.com")
     var connectedEvent: SocketEvent?
     var questionCallback: QuestionRecievedCallback?
     
     init(userToken: String) {
         self.userToken = userToken
         let params: [String: AnyObject] = ["Authorization" : "\(self.userToken)"]
-        let s = SocketIOClient(socketURL: "http://quiz-prod.herokuapp.com", opts: ["extraHeaders":params, "log":true])
+        let s = SocketIOClient(socketURL: "http://quiz-dev.herokuapp.com", opts: ["extraHeaders":params])
         s.nsp = "/classroom"
         s.on("connect") { (data, ack) in
             print("Connected")

@@ -20,7 +20,7 @@ public enum API {
 }
 
 extension API: MoyaTarget {
-    public var baseURL: NSURL { return NSURL(string: productionURL)! }
+    public var baseURL: NSURL { return NSURL(string: devURL)! }
     
     public var path: String {
         switch self {
