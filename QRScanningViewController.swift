@@ -82,13 +82,13 @@ class QRScanningViewController: UIViewController, AVCaptureMetadataOutputObjects
                     self.qrString = metadataObj.stringValue
                     print(metadataObj.stringValue)
                     self.socket.connectedEvent = {
+                        self.qrString = nil
                         self.socket.submitAttendance(metadataObj.stringValue)
                         dispatch_async(dispatch_get_main_queue(), { () -> Void in
                             self.performSegueWithIdentifier("BeginClassSegue", sender: self)
                         })
                     }
                     self.socket.start()
-                    
                 }
             }
         }
