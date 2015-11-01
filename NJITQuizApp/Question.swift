@@ -20,19 +20,11 @@ struct Instructor {
 struct MultipleChoiceQuestion {
     let prompt: String
     let dueTime: NSDate
+    let assignmentID: String
     let answers: [MultipleChoiceAnswer]
-    init(prompt: String, dueTime: NSDate, answers: [MultipleChoiceAnswer]) {
-        self.prompt = prompt
-        self.dueTime = dueTime
-        self.answers = answers
-    }
 }
 
 struct MultipleChoiceAnswer {
     let text: String
     let answerID: String
-    init(text: String, answerID:String) {
-        self.text = text
-        self.answerID = answerID
-    }
 }
