@@ -18,11 +18,13 @@ class ClassroomQuizTableViewController: UITableViewController, DZNEmptyDataSetDe
     var question: MultipleChoiceQuestion? {
         didSet {
             self.tableView.reloadData()
+            self.tableView.userInteractionEnabled = true
         }
     }
     
     var socketConnection: SocketClient!
     var timerLabel: UILabel?
+    var canSendAnswer: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,12 +67,18 @@ class ClassroomQuizTableViewController: UITableViewController, DZNEmptyDataSetDe
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if !self.canSendAnswer {
+            return
+        }
         switch indexPath.section {
         case 0:
             return
         case 1:
-            print(self.question?.answers[indexPath.row
-            ])
+            if let question = self.question {
+                self.socketConnection.sendAnswer(question.answers[indexPath.row], question: question)
+                QL2Info("Sending answer \(question.answers[indexPath.row].text) for question \(question.prompt)")
+                self.tableView.userInteractionEnabled = false
+            }
         default:
             return
         }
@@ -112,6 +120,8 @@ class ClassroomQuizTableViewController: UITableViewController, DZNEmptyDataSetDe
         }
         return 0
     }
+    
+    
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         switch indexPath.section {
