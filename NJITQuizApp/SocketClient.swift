@@ -86,18 +86,28 @@ class SocketClient {
         
         let rawQuestion = json["question"]
         let prompt = rawQuestion["prompt"].stringValue
+        let assignmentID = json["_id"].stringValue
         let options = rawQuestion["options"]
         var answers = [MultipleChoiceAnswer]()
-        for (index, option):(String, JSON) in options {
+        for (_, option):(String, JSON) in options {
             let answerText = option["text"].stringValue
-            let ans = MultipleChoiceAnswer(text: answerText, answerID: index)
+            let optionID = option["_id"].stringValue
+            let ans = MultipleChoiceAnswer(text: answerText, answerID: optionID)
             answers.append(ans)
         }
         
-        let question = MultipleChoiceQuestion(prompt: prompt, dueTime: dueDate!, answers: answers)
+        let question = MultipleChoiceQuestion(prompt: prompt, dueTime: dueDate ?? NSDate(timeIntervalSinceNow: 60), assignmentID:assignmentID, answers: answers)
+        
         
         return question
         
+    }
+    
+    func sendAnswer(answer: MultipleChoiceAnswer, question:MultipleChoiceQuestion) {
+        let answerResponse: [String: String] = ["assignmentId": question.assignmentID, "optionId": answer.answerID]
+        self.socket.emitWithAck("submitAnswer", answerResponse)(timeoutAfter: 5) { (data) in
+            QL2Info(data)
+        }
     }
     
     func disconnect() {
