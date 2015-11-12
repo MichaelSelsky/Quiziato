@@ -17,6 +17,8 @@ let devURL = "http://quiz-dev.herokuapp.com"
 public enum API {
     case Login((String, String))
     case Register((String, String))
+    case GetCourses
+    case GetCurrentCourses
 }
 
 extension API: MoyaTarget {
@@ -28,11 +30,22 @@ extension API: MoyaTarget {
             return "/oauth/token"
         case .Register(_, _):
             return "/register"
+        case .GetCourses:
+            return "/me/sessions"
+        case .GetCurrentCourses:
+            return "/me/sessions?active=true"
         }
     }
     
     public var method: Moya.Method {
-        return .POST
+        switch self {
+        case .GetCourses:
+            return .GET
+        case .GetCurrentCourses:
+            return .GET
+        default:
+            return .POST
+        }
     }
     
     public var parameters: [String: AnyObject]? {
@@ -41,14 +54,17 @@ extension API: MoyaTarget {
             return ["username": email, "password": password, "client_id":clientID, "client_secret":clientSecret, "grant_type":"password"]
         case .Register(let email, let password):
             return ["username": email, "password": password]
+        default:
+            return nil
         }
     }
+    
     
     public var parameterEncoding: Moya.ParameterEncoding {
         switch self {
         case .Login(_, _):
             return .URL
-        case .Register(_, _):
+        default:
             return .JSON
         }
     }

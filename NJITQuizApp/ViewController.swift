@@ -7,35 +7,41 @@
 //
 
 import UIKit
+import Moya
+import Heimdallr
 
 let loginSegueIdentifier = "loginSegue"
 
 class ViewController: UIViewController {
     
-    var loggedInAccount: UserAccount?
     var socketClient: SocketClient!
     var hasCheckedLogin: Bool = false
+    
+    var oAuthToken: OAuthAccessToken? = nil
+    
+    var provider: MoyaProvider<API>!
+    
+    let credentials = OAuthClientCredentials(id: clientID, secret: clientSecret)
+    let tokenURL = NSURL(string: "http://quiz-dev.herokuapp.com/oauth/token")!
+    
+    var heimdallr: Heimdallr!
+    
+    let requestClosure = { (endpoint: Endpoint<API>, done: NSURLRequest -> Void) in
+        var request = endpoint.urlRequest // This is the request Moya generates
+    }
     
     @IBOutlet weak var roomTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let loggedInAccountID = NSUserDefaults.standardUserDefaults().objectForKey("loggedInID") as? String
-        if let loggedInAccountID = loggedInAccountID where loggedInAccountID.characters.count > 0 {
-            self.loggedInAccount = UserAccount.fetchAccount(loggedInAccountID)
-        }
+        provider = MoyaProvider(requestClosure: requestClosure)
+        heimdallr = Heimdallr(tokenURL: tokenURL, credentials: credentials)
         
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        if !hasCheckedLogin {
-            if let loggedInAccount = loggedInAccount{
-                NSUserDefaults.standardUserDefaults().setObject(loggedInAccount.account, forKey: "loggedInID")
-                self.socketClient = SocketClient(userToken: loggedInAccount.token)
-                hasCheckedLogin = true
-            } else {
-                self.performSegueWithIdentifier(loginSegueIdentifier, sender: self)
-            }
+        if !heimdallr.hasAccessToken  {
+            self.performSegueWithIdentifier(loginSegueIdentifier, sender: self)
         }
     }
     
@@ -44,12 +50,11 @@ class ViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == loginSegueIdentifier {
             let destination = segue.destinationViewController as! LoginViewController
-            destination.loginCompletion = { (success: Bool, account: UserAccount?) in
+            destination.heimdallr = self.heimdallr
+            destination.loginCompletion = { (success: Bool) in
                 if success {
-                    self.hasCheckedLogin = false
-                    self.loggedInAccount = account
                     self.dismissViewControllerAnimated(true, completion: nil)
-                    let alertController = UIAlertController(title: "Logged In", message: "Thanks for logging in \(account!.account)", preferredStyle: .Alert)
+                    let alertController = UIAlertController(title: "Logged In", message: "Thanks for logging in", preferredStyle: .Alert)
                     let dismissAction = UIAlertAction(title: "Dismiss", style: .Cancel, handler: { (action) -> Void in
                         self.dismissViewControllerAnimated(true, completion: nil)
                     })
@@ -62,6 +67,8 @@ class ViewController: UIViewController {
         
         if segue.identifier == "QRSegue" {
             let destination = segue.destinationViewController as! QRScanningViewController
+            let accessToken = heimdallr.accessToken?.accessToken ?? ""
+            self.socketClient = SocketClient(userToken: accessToken)
             destination.socket = self.socketClient
         }
     }

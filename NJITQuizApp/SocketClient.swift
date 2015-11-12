@@ -15,7 +15,7 @@ enum SocketMessage{
 }
 
 typealias SocketEvent = () -> ()
-typealias QuestionRecievedCallback = (MultipleChoiceQuestion) -> ()
+typealias QuestionRecievedCallback = (MultipleChoiceQuestion?) -> ()
 
 class SocketClient {
     let userToken: String
@@ -26,7 +26,7 @@ class SocketClient {
     init(userToken: String) {
         self.userToken = userToken
         let params: [String: AnyObject] = ["Authorization" : "\(self.userToken)"]
-        let s = SocketIOClient(socketURL: "http://quiz-dev.herokuapp.com", opts: ["extraHeaders":params])
+        let s = SocketIOClient(socketURL: "http://quiz-dev.herokuapp.com", opts: ["extraHeaders":params, "log":true])
         s.nsp = "/classroom"
         s.on("connect") { (data, ack) in
             print("Connected")
@@ -53,6 +53,10 @@ class SocketClient {
                 UIApplication.sharedApplication().scheduleLocalNotification(notification)
             }
         }
+        s.on("assignmentTerminated") { (data, ack) -> Void in
+            //TODO: Check assignmentID
+            self.questionCallback?(nil)
+        }
         self.socket = s
     }
     func start() {
@@ -65,7 +69,19 @@ class SocketClient {
         dispatch_after(1, dispatch_get_main_queue()) { () -> Void in
             print("emitting: \(blob)")
             self.socket.emitWithAck("attendance", blob)(timeoutAfter: 0, callback: { (stuff) -> Void in
-                print(stuff)
+                QL1Debug(stuff)
+                if let stuff = stuff {
+                    let json = JSON(stuff[0])
+                    let questions = json["assignments"]
+                    if let question = questions.array?.last {
+                        let q = self.parseQuestionJSON(question)
+                        if q.dueTime.compare(NSDate(timeIntervalSinceNow: 3)) == NSComparisonResult.OrderedDescending {
+                            delay(3, closure: { () -> () in
+                                self.questionCallback?(q)
+                            })
+                        }
+                    }
+                }
                 let notification = NSNotification(name: "attendanceEvent", object: stuff)
                 NSNotificationCenter.defaultCenter().postNotification(notification)
             })
@@ -75,6 +91,11 @@ class SocketClient {
     
     func parseQuestion(data: NSArray) -> MultipleChoiceQuestion {
         let json = JSON(data[0])
+        return parseQuestionJSON(json)
+        
+    }
+    
+    func parseQuestionJSON(json: JSON) -> MultipleChoiceQuestion {
         let dueAt = json["dueAt"].stringValue
         
         let dateFormatter = NSDateFormatter()
@@ -100,7 +121,6 @@ class SocketClient {
         
         
         return question
-        
     }
     
     func sendAnswer(answer: MultipleChoiceAnswer, question:MultipleChoiceQuestion) {
@@ -113,4 +133,14 @@ class SocketClient {
     func disconnect() {
         self.socket.disconnect(fast: false)
     }
+    
+}
+
+func delay(delay:Double, closure:()->()) {
+    dispatch_after(
+        dispatch_time(
+            DISPATCH_TIME_NOW,
+            Int64(delay * Double(NSEC_PER_SEC))
+        ),
+        dispatch_get_main_queue(), closure)
 }

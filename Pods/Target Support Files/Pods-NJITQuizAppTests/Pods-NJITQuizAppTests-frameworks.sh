@@ -85,10 +85,14 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-NJITQuizAppTests/Alamofire.framework"
+  install_framework "Pods-NJITQuizAppTests/Argo.framework"
   install_framework "Pods-NJITQuizAppTests/DZNEmptyDataSet.framework"
+  install_framework "Pods-NJITQuizAppTests/Heimdallr.framework"
   install_framework "Pods-NJITQuizAppTests/JVFloatLabeledTextField.framework"
+  install_framework "Pods-NJITQuizAppTests/KeychainAccess.framework"
   install_framework "Pods-NJITQuizAppTests/Locksmith.framework"
   install_framework "Pods-NJITQuizAppTests/Moya.framework"
+  install_framework "Pods-NJITQuizAppTests/Result.framework"
   install_framework "Pods-NJITQuizAppTests/Socket_IO_Client_Swift.framework"
   install_framework "Pods-NJITQuizAppTests/SwiftyJSON.framework"
   install_framework "Pods-NJITQuizAppTests/Nimble.framework"
@@ -96,10 +100,14 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-NJITQuizAppTests/Alamofire.framework"
+  install_framework "Pods-NJITQuizAppTests/Argo.framework"
   install_framework "Pods-NJITQuizAppTests/DZNEmptyDataSet.framework"
+  install_framework "Pods-NJITQuizAppTests/Heimdallr.framework"
   install_framework "Pods-NJITQuizAppTests/JVFloatLabeledTextField.framework"
+  install_framework "Pods-NJITQuizAppTests/KeychainAccess.framework"
   install_framework "Pods-NJITQuizAppTests/Locksmith.framework"
   install_framework "Pods-NJITQuizAppTests/Moya.framework"
+  install_framework "Pods-NJITQuizAppTests/Result.framework"
   install_framework "Pods-NJITQuizAppTests/Socket_IO_Client_Swift.framework"
   install_framework "Pods-NJITQuizAppTests/SwiftyJSON.framework"
   install_framework "Pods-NJITQuizAppTests/Nimble.framework"

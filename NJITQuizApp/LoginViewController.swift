@@ -10,14 +10,17 @@ import UIKit
 import Moya
 import SwiftyJSON
 import Locksmith
+import Heimdallr
 
 // TODO: clean up ViewController 
 class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordLoginField: UITextField!
     
+    var heimdallr: Heimdallr!
+    
     let provider = MoyaProvider<API>()
-    var loginCompletion: (Bool, UserAccount?) -> () = { (success, _) in
+    var loginCompletion: (Bool) -> () = { (success) in
         if success {
             
         }
@@ -47,40 +50,13 @@ class LoginViewController: UIViewController {
         }
     }
     
-    func loginWithUsername(username: String, password: String, completion:(Bool, UserAccount?) -> ()){
-        provider.request(.Login((username, password))) { (data, statusCode, response, connectionError) -> () in
-            var success = true
-            var returnAccount: UserAccount?
-            if statusCode != 200 {
-                success = false //TODO: make this success thing a lot simpler
-                self.showError()
-            }
-            if let data = data {
-                let json = JSON(data: data) // I should move this to some class. Maybe make a nice initializer on UserAccount
-                let tokenInfo = json["access_token"]
-                if let clientID = tokenInfo["clientID"].string,
-                    userID = tokenInfo["userID"].string,
-                    token = tokenInfo["token"].string {
-                        let account = UserAccount(clientID: clientID, userID: userID, token: token, accountName: username)
-                        do { // TODO: make this nicer to work with
-                            try account.createInSecureStore()
-                            returnAccount = account
-                            completion(success, returnAccount)
-                        } catch LocksmithError.Duplicate {
-                            print("Duplicate")
-                            success = true
-                            returnAccount = account
-                            completion(success, returnAccount)
-                        } catch let error {
-                            print("Login Error\(error)")
-                            success = false
-                            self.showError()
-                            completion(success, returnAccount)
-                        }
-                } else {
-                    success = false
-                    completion(success, returnAccount)
-                }
+    func loginWithUsername(username: String, password: String, completion:(Bool) -> ()){
+        heimdallr.requestAccessToken(username: username, password: password) { (result) in
+            switch result {
+            case .Success:
+                completion(true)
+            case .Failure(let error):
+                print(error)
             }
         }
     }
