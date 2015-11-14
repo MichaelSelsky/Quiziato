@@ -94,7 +94,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-NJITQuizAppUITests/Moya.framework"
   install_framework "Pods-NJITQuizAppUITests/Result.framework"
   install_framework "Pods-NJITQuizAppUITests/Socket_IO_Client_Swift.framework"
-  install_framework "Pods-NJITQuizAppUITests/SwiftyJSON.framework"
   install_framework "Pods-NJITQuizAppUITests/Nimble.framework"
   install_framework "Pods-NJITQuizAppUITests/Quick.framework"
 fi
@@ -109,7 +108,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-NJITQuizAppUITests/Moya.framework"
   install_framework "Pods-NJITQuizAppUITests/Result.framework"
   install_framework "Pods-NJITQuizAppUITests/Socket_IO_Client_Swift.framework"
-  install_framework "Pods-NJITQuizAppUITests/SwiftyJSON.framework"
   install_framework "Pods-NJITQuizAppUITests/Nimble.framework"
   install_framework "Pods-NJITQuizAppUITests/Quick.framework"
 fi
