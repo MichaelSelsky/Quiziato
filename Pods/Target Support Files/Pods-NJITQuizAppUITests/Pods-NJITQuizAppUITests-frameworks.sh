@@ -86,6 +86,7 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-NJITQuizAppUITests/Alamofire.framework"
   install_framework "Pods-NJITQuizAppUITests/Argo.framework"
+  install_framework "Pods-NJITQuizAppUITests/Curry.framework"
   install_framework "Pods-NJITQuizAppUITests/DZNEmptyDataSet.framework"
   install_framework "Pods-NJITQuizAppUITests/Heimdallr.framework"
   install_framework "Pods-NJITQuizAppUITests/JVFloatLabeledTextField.framework"
@@ -100,6 +101,7 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-NJITQuizAppUITests/Alamofire.framework"
   install_framework "Pods-NJITQuizAppUITests/Argo.framework"
+  install_framework "Pods-NJITQuizAppUITests/Curry.framework"
   install_framework "Pods-NJITQuizAppUITests/DZNEmptyDataSet.framework"
   install_framework "Pods-NJITQuizAppUITests/Heimdallr.framework"
   install_framework "Pods-NJITQuizAppUITests/JVFloatLabeledTextField.framework"
