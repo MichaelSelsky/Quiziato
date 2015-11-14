@@ -2,6 +2,8 @@ source "https://github.com/CocoaPods/Specs.git"
 use_frameworks!
 
 pod 'Moya'
+pod 'Argo', '~> 2.2'
+pod 'Curry', '~> 1.4'
 pod 'Locksmith'
 pod 'JVFloatLabeledTextField'
 pod 'Socket.IO-Client-Swift', '~> 3.0.2'
