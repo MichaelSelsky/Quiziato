@@ -26,15 +26,27 @@ class ViewController: UIViewController {
     
     var heimdallr: Heimdallr!
     
-    let requestClosure = { (endpoint: Endpoint<API>, done: NSURLRequest -> Void) in
-        var request = endpoint.urlRequest // This is the request Moya generates
-    }
+    
     
     @IBOutlet weak var roomTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        provider = MoyaProvider(requestClosure: requestClosure)
         heimdallr = Heimdallr(tokenURL: tokenURL, credentials: credentials)
+        
+        let requestClosure = { (endpoint: Endpoint<API>, done: NSURLRequest -> Void) in
+            let request = endpoint.urlRequest // This is the request Moya generates
+            
+            self.heimdallr.authenticateRequest(request, completion: { (result) -> () in
+                switch result {
+                case .Success(let authenticatedRequest):
+                    done(authenticatedRequest)
+                default:
+                    done(request)
+                }
+            })
+        }
+        
+        provider = MoyaProvider(requestClosure: requestClosure)
         
     }
     
@@ -42,6 +54,10 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         if !heimdallr.hasAccessToken  {
             self.performSegueWithIdentifier(loginSegueIdentifier, sender: self)
+        } else {
+            self.provider.request(.GetCourses, completion: { (data, statusCode, response, error) -> () in
+                QL1Debug(data)
+            })
         }
     }
     
