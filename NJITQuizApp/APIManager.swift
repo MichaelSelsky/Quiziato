@@ -39,9 +39,7 @@ extension API: MoyaTarget {
     
     public var method: Moya.Method {
         switch self {
-        case .GetCourses:
-            return .GET
-        case .GetCurrentCourses:
+        case .GetCourses, .GetCurrentCourses:
             return .GET
         default:
             return .POST
