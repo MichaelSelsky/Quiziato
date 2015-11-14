@@ -8,7 +8,7 @@
 
 import Foundation
 import Socket_IO_Client_Swift
-import SwiftyJSON
+import Argo
 
 enum SocketMessage{
     case SubmitAttendance(blob: NSData)
@@ -70,14 +70,14 @@ class SocketClient {
             print("emitting: \(blob)")
             self.socket.emitWithAck("attendance", blob)(timeoutAfter: 0, callback: { (stuff) -> Void in
                 QL1Debug(stuff)
-                if let stuff = stuff {
-                    let json = JSON(stuff[0])
-                    let questions = json["assignments"]
-                    if let question = questions.array?.last {
-                        let q = self.parseQuestionJSON(question)
-                        if q.dueTime.compare(NSDate(timeIntervalSinceNow: 3)) == NSComparisonResult.OrderedDescending {
+                if let stuff = stuff where stuff.firstObject != nil {
+                    let json = JSON.parse(stuff.firstObject!)
+                    let questions: [MultipleChoiceQuestion]? = json <|| "assignments"
+                    
+                    if let question = questions?.last {
+                        if question.dueTime.compare(NSDate(timeIntervalSinceNow: 3)) == NSComparisonResult.OrderedDescending {
                             delay(3, closure: { () -> () in
-                                self.questionCallback?(q)
+                                self.questionCallback?(question)
                             })
                         }
                     }
@@ -90,20 +90,13 @@ class SocketClient {
     
     
     func parseQuestion(data: NSArray) -> MultipleChoiceQuestion {
-        let json = JSON(data[0])
-        return parseQuestionJSON(json)
-        
+        return decode(data.firstObject!)!
     }
-    
+    /*
     func parseQuestionJSON(json: JSON) -> MultipleChoiceQuestion {
         let dueAt = json["dueAt"].stringValue
         
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-        let posix = NSLocale(localeIdentifier: "en_US_POSIX")
-        dateFormatter.locale = posix
         
-        let dueDate = dateFormatter.dateFromString(dueAt)
         
         let rawQuestion = json["question"]
         let prompt = rawQuestion["prompt"].stringValue
@@ -122,7 +115,7 @@ class SocketClient {
         
         return question
     }
-    
+    */
     func sendAnswer(answer: MultipleChoiceAnswer, question:MultipleChoiceQuestion) {
         let answerResponse: [String: String] = ["assignmentId": question.assignmentID, "optionId": answer.answerID]
         self.socket.emitWithAck("submitAnswer", answerResponse)(timeoutAfter: 5) { (data) in

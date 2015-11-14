@@ -86,6 +86,7 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/Alamofire.framework"
   install_framework "Pods/Argo.framework"
+  install_framework "Pods/Curry.framework"
   install_framework "Pods/DZNEmptyDataSet.framework"
   install_framework "Pods/Heimdallr.framework"
   install_framework "Pods/JVFloatLabeledTextField.framework"
@@ -94,11 +95,11 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/Moya.framework"
   install_framework "Pods/Result.framework"
   install_framework "Pods/Socket_IO_Client_Swift.framework"
-  install_framework "Pods/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/Alamofire.framework"
   install_framework "Pods/Argo.framework"
+  install_framework "Pods/Curry.framework"
   install_framework "Pods/DZNEmptyDataSet.framework"
   install_framework "Pods/Heimdallr.framework"
   install_framework "Pods/JVFloatLabeledTextField.framework"
@@ -107,5 +108,4 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/Moya.framework"
   install_framework "Pods/Result.framework"
   install_framework "Pods/Socket_IO_Client_Swift.framework"
-  install_framework "Pods/SwiftyJSON.framework"
 fi

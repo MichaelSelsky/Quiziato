@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (3.1.2)
   - Argo (2.1.0)
+  - Curry (1.4.0)
   - DZNEmptyDataSet (1.7.2)
   - Heimdallr (3.0):
     - Heimdallr/Core (= 3.0)
@@ -19,9 +20,10 @@ PODS:
   - Quick (0.6.0)
   - Result (0.6.0-beta.4)
   - Socket.IO-Client-Swift (3.0.2)
-  - SwiftyJSON (2.3.1)
 
 DEPENDENCIES:
+  - Argo (~> 2.1)
+  - Curry (~> 1.4)
   - DZNEmptyDataSet
   - Heimdallr (~> 3.0)
   - JVFloatLabeledTextField
@@ -30,11 +32,11 @@ DEPENDENCIES:
   - Nimble (= 2.0.0-rc.3)
   - Quick (~> 0.6.0)
   - Socket.IO-Client-Swift (~> 3.0.2)
-  - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 7c16ca65f3c7e681fd925fd7f2dec7747ff96855
   Argo: f65db7f50301f7a623514cca2b15aa63e147b91a
+  Curry: 294533187eedbf52db60a1e70c29b4f5c9f621c0
   DZNEmptyDataSet: 0ec00bfc230d7450997b60c127afdd0b9f24f3b6
   Heimdallr: 62623dff4be8d99c159da5b82910ba0e88dadaa8
   JVFloatLabeledTextField: ea4a3d8387ddd43724c472bb2b8ab39b79af05d4
@@ -45,6 +47,5 @@ SPEC CHECKSUMS:
   Quick: 563686dbcf0ae0f9f7401ac9cd2d786ee1b7f3d7
   Result: f7927152cbaec0c043abb06ba0bc432678818418
   Socket.IO-Client-Swift: c68c105ee88d03d4610be8764f2e13ca2908de63
-  SwiftyJSON: 592b53bee5ef3dd9b3bebc6b9cb7ee35426ae8c3
 
 COCOAPODS: 0.39.0
