@@ -3,7 +3,6 @@ use_frameworks!
 
 pod 'Moya'
 pod 'Locksmith'
-pod 'SwiftyJSON'
 pod 'JVFloatLabeledTextField'
 pod 'Socket.IO-Client-Swift', '~> 3.0.2'
 pod 'DZNEmptyDataSet'
