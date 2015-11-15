@@ -72,18 +72,26 @@ class SocketClient {
                 QL1Debug(stuff)
                 if let stuff = stuff where stuff.firstObject != nil {
                     let json = JSON.parse(stuff.firstObject!)
-                    let questions: [MultipleChoiceQuestion]? = json <|| "assignments"
                     
+                    let course: Course = decode(stuff.firstObject!)!
+                    
+                    let parameter = Wrapper(value: course)
+                    
+                    let notification = NSNotification(name: "attendanceEvent", object: ["Course": parameter])
+                    NSNotificationCenter.defaultCenter().postNotification(notification)
+                    
+                    let questions: [MultipleChoiceQuestion]? = json <|| "assignments"
                     if let question = questions?.last {
-                        if question.dueTime.compare(NSDate(timeIntervalSinceNow: 3)) == NSComparisonResult.OrderedDescending {
-                            delay(3, closure: { () -> () in
+                        if question.dueTime.compare(NSDate(timeIntervalSinceNow: 2)) == NSComparisonResult.OrderedDescending {
+                            delay(1, closure: { () -> () in
                                 self.questionCallback?(question)
                             })
                         }
                     }
+                    
+                    
                 }
-                let notification = NSNotification(name: "attendanceEvent", object: stuff)
-                NSNotificationCenter.defaultCenter().postNotification(notification)
+                
             })
         }
     }

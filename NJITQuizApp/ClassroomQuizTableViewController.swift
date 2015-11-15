@@ -42,13 +42,14 @@ class ClassroomQuizTableViewController: UITableViewController, DZNEmptyDataSetDe
         self.tableView.estimatedRowHeight = 44.0
         
         NSNotificationCenter.defaultCenter().addObserverForName("attendanceEvent", object: nil, queue: NSOperationQueue.mainQueue()) { (note) -> Void in
-            let classInfo = note.object?.firstObject as! [String: AnyObject]
-            let course = classInfo["course"] as! [String: AnyObject]
-            self.className = course["title"] as? String
+        
+            let userInfo = note.object! as! [String: Wrapper<Course>]
+            let courseWrapper = userInfo["Course"]
+            let course = courseWrapper!.wrappedValue
+            self.className = course.name
             
-            let instructor = classInfo["instructor"] as! [String: AnyObject]
-            let instructorNames = instructor["name"] as! [String: AnyObject]
-            self.instructorName = instructorNames["full"] as? String
+            let instructor = course.instructor
+            self.instructorName = instructor.name
             
             self.tableView.reloadData()
             

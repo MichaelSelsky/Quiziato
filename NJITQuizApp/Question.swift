@@ -10,13 +10,33 @@ import Foundation
 import Argo
 import Curry
 
+class Wrapper<T>{
+    let wrappedValue: T
+    init(value: T) {
+        wrappedValue = value
+    }
+}
+
 struct Course {
     let name: String
     let instructor: Instructor
+    let id: String
+}
+
+extension Course: Decodable {
+    static func decode(json: JSON) -> Decoded<Course.DecodedType> {
+        return curry(Course.init) <^> json <| ["course", "full"] <*> json <| "instructor" <*> json <| ["course", "full"]
+    }
 }
 
 struct Instructor {
     let name: String
+}
+
+extension Instructor: Decodable {
+    static func decode(json: JSON) -> Decoded<Instructor.DecodedType> {
+        return curry(Instructor.init) <^> json <| ["name", "full"]
+    }
 }
 
 struct MultipleChoiceQuestion {
