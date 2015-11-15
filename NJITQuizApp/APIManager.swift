@@ -15,7 +15,6 @@ let productionURL = "http://quiz-prod.herokuapp.com"
 let devURL = "http://quiz-dev.herokuapp.com"
 
 public enum API {
-    case Login((String, String))
     case Register((String, String))
     case GetCourses
     case GetCurrentCourses
@@ -26,8 +25,6 @@ extension API: MoyaTarget {
     
     public var path: String {
         switch self {
-        case .Login(_, _):
-            return "/oauth/token"
         case .Register(_, _):
             return "/register"
         case .GetCourses:
@@ -48,8 +45,6 @@ extension API: MoyaTarget {
     
     public var parameters: [String: AnyObject]? {
         switch self {
-        case .Login(let email, let password):
-            return ["username": email, "password": password, "client_id":clientID, "client_secret":clientSecret, "grant_type":"password"]
         case .Register(let email, let password):
             return ["username": email, "password": password]
         default:
@@ -59,12 +54,7 @@ extension API: MoyaTarget {
     
     
     public var parameterEncoding: Moya.ParameterEncoding {
-        switch self {
-        case .Login(_, _):
-            return .URL
-        default:
-            return .JSON
-        }
+        return .JSON
     }
     
     public var sampleData: NSData {
