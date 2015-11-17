@@ -8,9 +8,11 @@
 
 import UIKit
 import Moya
+import Argo
 import Heimdallr
 
 let loginSegueIdentifier = "loginSegue"
+let rejoinClassSegueIdentifier = "RejoinClassSegue"
 
 class ViewController: UIViewController {
     
@@ -55,14 +57,47 @@ class ViewController: UIViewController {
         if !heimdallr.hasAccessToken  {
             self.performSegueWithIdentifier(loginSegueIdentifier, sender: self)
         } else {
-            self.provider.request(.GetCourses, completion: { (data, statusCode, response, error) -> () in
-                QL1Debug(data)
-            })
+            let accessToken = heimdallr.accessToken?.accessToken ?? ""
+            self.socketClient = SocketClient(userToken: accessToken)
         }
     }
     
-    @IBAction func connectToSocketButtonPressed(sender: AnyObject) {
+    @IBAction func rejoinClassButtonTapped(sender: AnyObject) {
+        joinOnGoingSession()
     }
+    
+    func joinOnGoingSession() {
+        self.provider.request(.GetCourses, completion: { (data, statusCode, response, error) -> () in
+            QL1Debug(data)
+            if statusCode == 200 {
+                var json: AnyObject?
+                do {
+                    json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableLeaves)
+                } catch {
+                    QL4Error(error)
+                }
+                guard let j = json else {
+                    return
+                }
+                let sessions: [Session]? = decode(j)
+                if let sessions = sessions {
+                    let currentSessions = sessions.filter({ (session) -> Bool in
+                        return !session.ended
+                    })
+                    if let currentSession = currentSessions.first {
+                        self.socketClient.connectedEvent = {
+                            self.socketClient.submitAttendance(currentSession.roomId)
+                            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                self.performSegueWithIdentifier(rejoinClassSegueIdentifier, sender: self)
+                            })
+                        }
+                        self.socketClient.start()
+                    }
+                }
+            }
+        })
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == loginSegueIdentifier {
             let destination = segue.destinationViewController as! LoginViewController
@@ -83,9 +118,13 @@ class ViewController: UIViewController {
         
         if segue.identifier == "QRSegue" {
             let destination = segue.destinationViewController as! QRScanningViewController
-            let accessToken = heimdallr.accessToken?.accessToken ?? ""
-            self.socketClient = SocketClient(userToken: accessToken)
             destination.socket = self.socketClient
+        }
+        
+        if segue.identifier == rejoinClassSegueIdentifier {
+            let navVc = segue.destinationViewController as! UINavigationController
+            let classVC = navVc.viewControllers[0] as! ClassroomQuizTableViewController
+            classVC.socketConnection = self.socketClient
         }
     }
 }

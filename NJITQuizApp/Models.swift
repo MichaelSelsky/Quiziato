@@ -52,6 +52,28 @@ extension MultipleChoiceQuestion: Decodable {
     }
 }
 
+struct MultipleChoiceAnswer {
+    let text: String
+    let answerID: String
+}
+
+extension MultipleChoiceAnswer: Decodable {
+    internal static func decode(json: JSON) -> Decoded<MultipleChoiceAnswer.DecodedType> {
+        return curry(MultipleChoiceAnswer.init) <^> json <| "text" <*> json <| "_id"
+    }
+}
+
+struct Session {
+    let roomId: String
+    let ended: Bool
+}
+
+extension Session: Decodable {
+    static func decode(json: JSON) -> Decoded<Session.DecodedType> {
+        return curry(Session.init) <^> json <| ["session", "roomId"] <*> json <| ["session", "ended"]
+    }
+}
+
 extension NSDate: Decodable {
     public static func decode(json: JSON) -> Decoded<NSDate.DecodedType> {
         let dateFormatter = NSDateFormatter()
@@ -68,16 +90,5 @@ extension NSDate: Decodable {
             }
         default: return Decoded.Failure(.TypeMismatch(expected: "Should be a string", actual: "\(json) is not a date"))
         }
-    }
-}
-
-struct MultipleChoiceAnswer {
-    let text: String
-    let answerID: String
-}
-
-extension MultipleChoiceAnswer: Decodable {
-    internal static func decode(json: JSON) -> Decoded<MultipleChoiceAnswer.DecodedType> {
-        return curry(MultipleChoiceAnswer.init) <^> json <| "text" <*> json <| "_id"
     }
 }

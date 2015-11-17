@@ -24,7 +24,7 @@
 		4CBC74461BD005280000AFC4 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBC74451BD005280000AFC4 /* QuestionTableViewCell.swift */; };
 		4CBC74481BD005380000AFC4 /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBC74471BD005380000AFC4 /* AnswerTableViewCell.swift */; };
 		4CBC744A1BD006110000AFC4 /* ClassroomQuizTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBC74491BD006110000AFC4 /* ClassroomQuizTableViewController.swift */; };
-		4CBC744C1BD006940000AFC4 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBC744B1BD006940000AFC4 /* Question.swift */; };
+		4CBC744C1BD006940000AFC4 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBC744B1BD006940000AFC4 /* Models.swift */; };
 		4CEE187C1BCBF9350063ED45 /* QorumLogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE187B1BCBF9350063ED45 /* QorumLogs.swift */; };
 		F94B911D1CF194013F1D1333 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8907EAA4D2B0666734E038E /* Pods.framework */; };
 /* End PBXBuildFile section */
@@ -72,7 +72,7 @@
 		4CBC74451BD005280000AFC4 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		4CBC74471BD005380000AFC4 /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
 		4CBC74491BD006110000AFC4 /* ClassroomQuizTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassroomQuizTableViewController.swift; sourceTree = "<group>"; };
-		4CBC744B1BD006940000AFC4 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		4CBC744B1BD006940000AFC4 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		4CEE187B1BCBF9350063ED45 /* QorumLogs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QorumLogs.swift; path = ../QorumLogs.swift; sourceTree = "<group>"; };
 		55B72AB8B64C44E4F3D69830 /* Pods_NJITQuizAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NJITQuizAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7832CA6398F5DB01D105915F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -144,7 +144,7 @@
 				4CB2B06B1BA8878C0070DC91 /* APIManager.swift */,
 				4CB2B0281BA878D90070DC91 /* Main.storyboard */,
 				4CBC74491BD006110000AFC4 /* ClassroomQuizTableViewController.swift */,
-				4CBC744B1BD006940000AFC4 /* Question.swift */,
+				4CBC744B1BD006940000AFC4 /* Models.swift */,
 				4CBC74471BD005380000AFC4 /* AnswerTableViewCell.swift */,
 				4CBC74451BD005280000AFC4 /* QuestionTableViewCell.swift */,
 				4CB2B02B1BA878D90070DC91 /* Assets.xcassets */,
@@ -467,7 +467,7 @@
 				4CB2B06C1BA8878C0070DC91 /* APIManager.swift in Sources */,
 				4CBC744A1BD006110000AFC4 /* ClassroomQuizTableViewController.swift in Sources */,
 				4C089AFC1BA9C3E300F6ABDB /* UserAccount.swift in Sources */,
-				4CBC744C1BD006940000AFC4 /* Question.swift in Sources */,
+				4CBC744C1BD006940000AFC4 /* Models.swift in Sources */,
 				4CB2B0251BA878D90070DC91 /* AppDelegate.swift in Sources */,
 				4C067D6D1BB1CDFA0067FA65 /* SocketClient.swift in Sources */,
 			);

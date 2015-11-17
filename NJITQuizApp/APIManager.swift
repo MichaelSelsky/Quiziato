@@ -28,9 +28,9 @@ extension API: MoyaTarget {
         case .Register(_, _):
             return "/register"
         case .GetCourses:
-            return "/me/sessions"
+            return "/api/user/me/sessions"
         case .GetCurrentCourses:
-            return "/me/sessions?active=true"
+            return "/api/user/me/sessions/active"
         }
     }
     
