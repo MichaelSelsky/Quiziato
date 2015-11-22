@@ -42,7 +42,8 @@ class ViewController: UIViewController {
                 switch result {
                 case .Success(let authenticatedRequest):
                     done(authenticatedRequest)
-                default:
+                case .Failure(let error):
+                    QL4Error(error)
                     done(request)
                 }
             })
@@ -67,7 +68,7 @@ class ViewController: UIViewController {
     }
     
     func joinOnGoingSession() {
-        self.provider.request(.GetCourses, completion: { (data, statusCode, response, error) -> () in
+        self.provider.request(.GetCurrentCourses, completion: { (data, statusCode, response, error) -> () in
             QL1Debug(data)
             if statusCode == 200 {
                 var json: AnyObject?

@@ -30,7 +30,7 @@ extension API: MoyaTarget {
         case .GetCourses:
             return "/api/user/me/sessions"
         case .GetCurrentCourses:
-            return "/api/user/me/sessions/active"
+            return "/api/user/me/sessions"
         }
     }
     
@@ -47,6 +47,8 @@ extension API: MoyaTarget {
         switch self {
         case .Register(let email, let password):
             return ["username": email, "password": password]
+        case .GetCurrentCourses:
+            return ["active": true]
         default:
             return nil
         }
