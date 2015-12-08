@@ -9,6 +9,7 @@
 import Foundation
 import Socket_IO_Client_Swift
 import Argo
+import AudioToolbox
 
 enum SocketMessage{
     case SubmitAttendance(blob: NSData)
@@ -52,6 +53,8 @@ class SocketClient {
                 notification.fireDate = NSDate()
                 notification.alertTitle = question.prompt
                 notification.alertAction = "Answer question"
+                
+                AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
                 
                 UIApplication.sharedApplication().scheduleLocalNotification(notification)
             }
