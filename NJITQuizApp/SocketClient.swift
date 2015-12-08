@@ -55,7 +55,6 @@ class SocketClient {
                 notification.alertAction = "Answer question"
                 
                 AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
-                
                 UIApplication.sharedApplication().scheduleLocalNotification(notification)
             }
         }

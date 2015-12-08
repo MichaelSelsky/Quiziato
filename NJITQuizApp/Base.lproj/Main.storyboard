@@ -11,16 +11,16 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iClicker2000_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Quiziato_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="TemplateBackgroundView" customModule="Quiziato_" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiziato™" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkN-HZ-Jkt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Quiziato™" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkN-HZ-Jkt">
                                 <rect key="frame" x="242" y="70" width="116" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -34,10 +34,10 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="PHi-ui-0zC">
-                                <rect key="frame" x="28" y="127" width="544" height="120"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PHi-ui-0zC">
+                                <rect key="frame" x="28" y="127" width="544" height="144"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvT-hF-CwL">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvT-hF-CwL" customClass="BorderedButton" customModule="Quiziato_" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="544" height="30"/>
                                         <animations/>
                                         <state key="normal" title="Join a Classroom">
@@ -47,8 +47,8 @@
                                             <segue destination="qg0-xb-FFa" kind="presentation" identifier="QRSegue" id="mI0-uF-klg"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zpV-cj-Y1s">
-                                        <rect key="frame" x="0.0" y="30" width="544" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zpV-cj-Y1s" customClass="BorderedButton" customModule="Quiziato_" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="38" width="544" height="30"/>
                                         <animations/>
                                         <state key="normal" title="Rejoin Class">
                                             <color key="titleColor" red="0.15410047769546509" green="0.41306763887405396" blue="0.69063264131546021" alpha="1" colorSpace="calibratedRGB"/>
@@ -57,8 +57,8 @@
                                             <action selector="rejoinClassButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UbN-I1-ffi"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kb3-to-Q3o">
-                                        <rect key="frame" x="0.0" y="60" width="544" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kb3-to-Q3o" customClass="BorderedButton" customModule="Quiziato_" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="76" width="544" height="30"/>
                                         <animations/>
                                         <state key="normal" title="View Previous Classes">
                                             <color key="titleColor" red="0.15410047769546509" green="0.41306763887405396" blue="0.69063264131546021" alpha="1" colorSpace="calibratedRGB"/>
@@ -68,14 +68,14 @@
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9JP-ce-D2f">
-                                        <rect key="frame" x="0.0" y="90" width="544" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="110" width="544" height="0.0"/>
                                         <animations/>
                                         <state key="normal" title="Look at previous classes">
                                             <color key="titleColor" red="0.15410047769546509" green="0.41306763887405396" blue="0.69063264131546021" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKO-DI-2yn">
-                                        <rect key="frame" x="0.0" y="90" width="544" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKO-DI-2yn" customClass="BorderedButton" customModule="Quiziato_" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="114" width="544" height="30"/>
                                         <animations/>
                                         <state key="normal" title="Logout">
                                             <color key="titleColor" red="0.15410047769546509" green="0.41306763887405396" blue="0.69063264131546021" alpha="1" colorSpace="calibratedRGB"/>
@@ -89,7 +89,7 @@
                             </stackView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Vgg-hF-96A" firstAttribute="centerX" secondItem="hkN-HZ-Jkt" secondAttribute="centerX" id="00l-lh-7em"/>
                             <constraint firstItem="PHi-ui-0zC" firstAttribute="top" secondItem="Vgg-hF-96A" secondAttribute="bottom" constant="8" id="69f-qn-gxm"/>
@@ -112,7 +112,7 @@
         <!--Scanning View Controller-->
         <scene sceneID="C88-rN-Z2T">
             <objects>
-                <viewController id="qg0-xb-FFa" customClass="QRScanningViewController" customModule="iClicker2000_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qg0-xb-FFa" customClass="QRScanningViewController" customModule="Quiziato_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Y8q-cR-Tg1"/>
                         <viewControllerLayoutGuide type="bottom" id="nBL-sL-hHL"/>
@@ -129,7 +129,7 @@
                                     <constraint firstAttribute="width" secondItem="vKB-j9-lKV" secondAttribute="height" multiplier="1:1" id="gVw-6V-7Im"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geC-52-ko0">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geC-52-ko0" customClass="BorderedButton" customModule="Quiziato_" customModuleProvider="target">
                                 <rect key="frame" x="269" y="527" width="62" height="30"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -177,12 +177,12 @@
         <!--Login View Controller-->
         <scene sceneID="tZF-P2-bh8">
             <objects>
-                <viewController id="GY3-jC-lOO" customClass="LoginViewController" customModule="iClicker2000_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="GY3-jC-lOO" customClass="LoginViewController" customModule="Quiziato_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yVr-Kz-3o5"/>
                         <viewControllerLayoutGuide type="bottom" id="BQJ-LP-g1s"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="6cn-E7-vlF">
+                    <view key="view" contentMode="scaleToFill" id="6cn-E7-vlF" customClass="TemplateBackgroundView" customModule="Quiziato_" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -211,7 +211,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zKm-y9-dhG">
                                         <rect key="frame" x="0.0" y="112" width="544" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhO-SP-aSd">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhO-SP-aSd" customClass="BorderedButton" customModule="Quiziato_" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="544" height="30"/>
                                                 <animations/>
                                                 <state key="normal" title="Login"/>
@@ -219,7 +219,7 @@
                                                     <action selector="loginButtonPressed:" destination="GY3-jC-lOO" eventType="touchUpInside" id="sBD-Xr-Xzu"/>
                                                 </connections>
                                             </button>
-                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PzA-iw-DyV">
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PzA-iw-DyV" customClass="BorderedButton" customModule="Quiziato_" customModuleProvider="target">
                                                 <rect key="frame" x="544" y="0.0" width="0.0" height="30"/>
                                                 <animations/>
                                                 <state key="normal" title="Register"/>
@@ -254,7 +254,7 @@
         <!--Class History-->
         <scene sceneID="XFC-M1-1LO">
             <objects>
-                <tableViewController title="Class History" clearsSelectionOnViewWillAppear="NO" id="ul8-hb-jn9" customClass="SessionListTableViewController" customModule="iClicker2000_" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Class History" clearsSelectionOnViewWillAppear="NO" id="ul8-hb-jn9" customClass="SessionListTableViewController" customModule="Quiziato_" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="RN7-7N-dJD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -265,11 +265,11 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zp9-9m-BG6" id="Lko-xM-CGz">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aJC-1T-EPi">
-                                            <rect key="frame" x="15" y="5" width="32" height="20"/>
+                                            <rect key="frame" x="15" y="6" width="31.5" height="19.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -277,7 +277,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="D7F-84-4r3">
-                                            <rect key="frame" x="15" y="25" width="41" height="14"/>
+                                            <rect key="frame" x="15" y="25.5" width="40.5" height="13.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -347,7 +347,7 @@
         <!--Assignments Collection View Controller-->
         <scene sceneID="qmQ-ku-0xh">
             <objects>
-                <collectionViewController id="2EM-0o-TJM" customClass="AssignmentsCollectionViewController" customModule="iClicker2000_" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="2EM-0o-TJM" customClass="AssignmentsCollectionViewController" customModule="Quiziato_" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Sof-21-Rxg">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -359,7 +359,7 @@
                             <inset key="sectionInset" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="assignmentCell" id="A87-vD-3zu" customClass="AssignmentCollectionViewCell" customModule="iClicker2000_" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="assignmentCell" id="A87-vD-3zu" customClass="AssignmentCollectionViewCell" customModule="Quiziato_" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="270" height="140"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -427,7 +427,7 @@
         <!--Fixed Split View Controller-->
         <scene sceneID="PuY-fA-3Sk">
             <objects>
-                <splitViewController id="Uab-5S-n5P" customClass="FixedSplitViewController" customModule="iClicker2000_" customModuleProvider="target" sceneMemberID="viewController">
+                <splitViewController id="Uab-5S-n5P" customClass="FixedSplitViewController" customModule="Quiziato_" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <segue destination="zVI-PR-ogh" kind="relationship" relationship="masterViewController" id="RzB-Oc-Kdc"/>
                         <segue destination="sd8-t5-DnJ" kind="relationship" relationship="detailViewController" id="VmS-1G-POw"/>
@@ -457,18 +457,18 @@
         <!--Classroom Quiz Table View Controller-->
         <scene sceneID="cOr-He-fPL">
             <objects>
-                <tableViewController id="gG6-z5-Fcw" customClass="ClassroomQuizTableViewController" customModule="iClicker2000_" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="gG6-z5-Fcw" customClass="ClassroomQuizTableViewController" customModule="Quiziato_" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="79" sectionHeaderHeight="18" sectionFooterHeight="18" id="5B2-Qo-aze">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuestionCell" rowHeight="79" id="Qlq-54-xQT" customClass="QuestionTableViewCell" customModule="iClicker2000_" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuestionCell" rowHeight="79" id="Qlq-54-xQT" customClass="QuestionTableViewCell" customModule="Quiziato_" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="113.5" width="600" height="79"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qlq-54-xQT" id="S3e-Hq-7wt">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="78"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="78.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="760" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGa-p4-Msd">
@@ -506,15 +506,15 @@
                                     <outlet property="timeLeftLabel" destination="bRd-b5-jr0" id="15N-jJ-gU8"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AnswerCell" textLabel="eBe-AN-56f" style="IBUITableViewCellStyleDefault" id="h25-dB-NGh" customClass="AnswerTableViewCell" customModule="iClicker2000_" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AnswerCell" textLabel="eBe-AN-56f" style="IBUITableViewCellStyleDefault" id="h25-dB-NGh" customClass="AnswerTableViewCell" customModule="Quiziato_" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="192.5" width="600" height="79"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h25-dB-NGh" id="pHp-f0-rkr">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="78"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="78.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eBe-AN-56f">
-                                            <rect key="frame" x="15" y="0.0" width="570" height="78"/>
+                                            <rect key="frame" x="15" y="0.0" width="570" height="78.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
