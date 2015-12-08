@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     var provider: MoyaProvider<API>!
     
     let credentials = OAuthClientCredentials(id: clientID, secret: clientSecret)
-    let tokenURL = NSURL(string: "http://quiz-dev.herokuapp.com/oauth/token")!
+    let tokenURL = NSURL(string: "\(productionURL)/oauth/token")!
     
     var heimdallr: Heimdallr!
     
@@ -82,6 +82,17 @@ class ViewController: UIViewController {
                 }
                 let sessions: [Session]? = decode(j)
                 if let sessions = sessions {
+//                    for s in sessions {
+//                        self.provider.request(.GetGradesForSession(s.id)){ (data, statusCode, response, error) -> () in
+//                            QL1Debug(data)
+//                            do {
+//                                let gradeJSON = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableLeaves) as! [[String: AnyObject]]
+//                            
+//                            } catch {
+//                                QL4Error(error)
+//                            }
+//                        }
+//                    }
                     let currentSessions = sessions.filter({ (session) -> Bool in
                         return !session.ended
                     })
@@ -126,6 +137,13 @@ class ViewController: UIViewController {
             let navVc = segue.destinationViewController as! UINavigationController
             let classVC = navVc.viewControllers[0] as! ClassroomQuizTableViewController
             classVC.socketConnection = self.socketClient
+        }
+        
+        if segue.identifier == "ClassDetailSegue" {
+            let splitVC = segue.destinationViewController as! UISplitViewController
+            let navVc = splitVC.viewControllers.first as! UINavigationController
+            let sessionListVc = navVc.viewControllers[0] as! SessionListTableViewController
+            sessionListVc.apiProvider = self.provider
         }
     }
 }

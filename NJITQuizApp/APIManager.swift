@@ -18,6 +18,7 @@ public enum API {
     case Register((String, String))
     case GetCourses
     case GetCurrentCourses
+    case GetGradesForSession(String)
 }
 
 extension API: MoyaTarget {
@@ -27,16 +28,16 @@ extension API: MoyaTarget {
         switch self {
         case .Register(_, _):
             return "/register"
-        case .GetCourses:
+        case .GetCourses, .GetCurrentCourses:
             return "/api/user/me/sessions"
-        case .GetCurrentCourses:
-            return "/api/user/me/sessions"
+        case .GetGradesForSession(let sessionID):
+            return "api/user/me/session/\(sessionID)/grades"
         }
     }
     
     public var method: Moya.Method {
         switch self {
-        case .GetCourses, .GetCurrentCourses:
+        case .GetCourses, .GetCurrentCourses, .GetGradesForSession(_):
             return .GET
         default:
             return .POST

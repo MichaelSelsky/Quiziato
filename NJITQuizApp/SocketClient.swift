@@ -20,6 +20,7 @@ typealias QuestionRecievedCallback = (MultipleChoiceQuestion?) -> ()
 class SocketClient {
     let userToken: String
     var socket: SocketIOClient = SocketIOClient(socketURL: productionURL)
+    var isConnected: Bool = false
     var connectedEvent: SocketEvent?
     var questionCallback: QuestionRecievedCallback?
     
@@ -29,6 +30,7 @@ class SocketClient {
         let s = SocketIOClient(socketURL: productionURL, opts: ["extraHeaders":params, "log":true])
         s.nsp = "/classroom"
         s.on("connect") { (data, ack) in
+            self.isConnected = true
             print("Connected")
             self.connectedEvent?()
         }
@@ -36,6 +38,7 @@ class SocketClient {
             
         }
         s.on("disconnect") { (data, ack) -> Void in
+            self.isConnected = false
             print("Disconnected")
         }
         s.on("error") { (data, ack) -> Void in
@@ -61,8 +64,10 @@ class SocketClient {
     }
     func start() {
         print("Starting Connection")
-        self.socket.disconnect(fast: true)
-        self.socket.connect(timeoutAfter: 10, withTimeoutHandler: nil);
+        if !self.isConnected {
+            self.socket.disconnect(fast: true)
+            self.socket.connect(timeoutAfter: 10, withTimeoutHandler: nil);
+        }
     }
     
     func submitAttendance(blob: String) {

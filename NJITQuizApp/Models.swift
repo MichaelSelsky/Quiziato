@@ -10,10 +10,28 @@ import Foundation
 import Argo
 import Curry
 
+typealias GradedSession = (Session, Double, [Assignment]?)
+
 class Wrapper<T>{
     let wrappedValue: T
     init(value: T) {
         wrappedValue = value
+    }
+}
+
+
+struct Assignment {
+    let question: MultipleChoiceQuestion
+    let graded: Bool
+    let correct: Bool
+    let correctAns: String?
+    let submittedAns: String?
+}
+
+extension Assignment: Decodable {
+    static func decode(json: JSON) -> Decoded<Assignment.DecodedType> {
+        QL1Debug(json)
+        return curry(Assignment.init) <^> json <| "assignment" <*> json <| "graded" <*> json <| "correct" <*> json <|? ["assignment", "question", "correctAnswer"] <*> json <|? "submission"
     }
 }
 
@@ -66,11 +84,16 @@ extension MultipleChoiceAnswer: Decodable {
 struct Session {
     let roomId: String
     let ended: Bool
+    let date: NSDate
+    let id: String
+    var course: Course
+//    let assignments
 }
 
 extension Session: Decodable {
     static func decode(json: JSON) -> Decoded<Session.DecodedType> {
-        return curry(Session.init) <^> json <| ["session", "roomId"] <*> json <| ["session", "ended"]
+        QL1Debug(json)
+        return curry(Session.init) <^> json <| ["session", "roomId"] <*> json <| ["session", "ended"] <*> json <| ["session", "date"] <*> json <| ["session", "_id"] <*> json <| "session"
     }
 }
 

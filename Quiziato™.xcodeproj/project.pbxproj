@@ -10,8 +10,11 @@
 		245E8042F721E01BC55AFA61 /* Pods_NJITQuizAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4704EF5A7DE731C5A6353F70 /* Pods_NJITQuizAppUITests.framework */; };
 		4A9AA32AD7FC2D0D3F2514A8 /* Pods_NJITQuizAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B72AB8B64C44E4F3D69830 /* Pods_NJITQuizAppTests.framework */; };
 		4C067D6D1BB1CDFA0067FA65 /* SocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C067D6C1BB1CDFA0067FA65 /* SocketClient.swift */; };
-		4C089AFC1BA9C3E300F6ABDB /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C089AFB1BA9C3E300F6ABDB /* UserAccount.swift */; };
 		4C40F6131BC6DB1200F4D559 /* QRScanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40F6121BC6DB1200F4D559 /* QRScanningViewController.swift */; };
+		4CA79C971C036D3900B4B259 /* SessionListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA79C961C036D3900B4B259 /* SessionListTableViewController.swift */; };
+		4CA79C991C03B91A00B4B259 /* FixedSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA79C981C03B91A00B4B259 /* FixedSplitViewController.swift */; };
+		4CA79C9B1C03BAE100B4B259 /* AssignmentsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA79C9A1C03BAE100B4B259 /* AssignmentsCollectionViewController.swift */; };
+		4CA79C9D1C03BB2900B4B259 /* AssignmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA79C9C1C03BB2900B4B259 /* AssignmentCollectionViewCell.swift */; };
 		4CB2B0251BA878D90070DC91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB2B0241BA878D90070DC91 /* AppDelegate.swift */; };
 		4CB2B0271BA878D90070DC91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB2B0261BA878D90070DC91 /* ViewController.swift */; };
 		4CB2B02A1BA878D90070DC91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CB2B0281BA878D90070DC91 /* Main.storyboard */; };
@@ -52,19 +55,22 @@
 		457D3020FDCDF531A12C3301 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		4704EF5A7DE731C5A6353F70 /* Pods_NJITQuizAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NJITQuizAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C067D6C1BB1CDFA0067FA65 /* SocketClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketClient.swift; sourceTree = "<group>"; };
-		4C089AFB1BA9C3E300F6ABDB /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		4C40F6121BC6DB1200F4D559 /* QRScanningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QRScanningViewController.swift; path = ../QRScanningViewController.swift; sourceTree = "<group>"; };
-		4CB2B0211BA878D90070DC91 /* NJITQuizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NJITQuizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CA79C961C036D3900B4B259 /* SessionListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionListTableViewController.swift; sourceTree = "<group>"; };
+		4CA79C981C03B91A00B4B259 /* FixedSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixedSplitViewController.swift; sourceTree = "<group>"; };
+		4CA79C9A1C03BAE100B4B259 /* AssignmentsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentsCollectionViewController.swift; sourceTree = "<group>"; };
+		4CA79C9C1C03BB2900B4B259 /* AssignmentCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentCollectionViewCell.swift; sourceTree = "<group>"; };
+		4CB2B0211BA878D90070DC91 /* Quiziato™.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quiziato™.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CB2B0241BA878D90070DC91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CB2B0261BA878D90070DC91 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4CB2B0291BA878D90070DC91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4CB2B02B1BA878D90070DC91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CB2B02E1BA878D90070DC91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4CB2B0301BA878D90070DC91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4CB2B0351BA878D90070DC91 /* NJITQuizAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NJITQuizAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CB2B0351BA878D90070DC91 /* Quiziato™.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Quiziato™.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CB2B0391BA878D90070DC91 /* NJITQuizAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NJITQuizAppTests.swift; sourceTree = "<group>"; };
 		4CB2B03B1BA878D90070DC91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4CB2B0401BA878DA0070DC91 /* NJITQuizAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NJITQuizAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CB2B0401BA878DA0070DC91 /* Quiziato™.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Quiziato™.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CB2B0441BA878DA0070DC91 /* NJITQuizAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NJITQuizAppUITests.swift; sourceTree = "<group>"; };
 		4CB2B0461BA878DA0070DC91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CB2B0691BA87F720070DC91 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +115,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4CA79C951C036CFA00B4B259 /* ClassroomVC */ = {
+			isa = PBXGroup;
+			children = (
+				4CBC74491BD006110000AFC4 /* ClassroomQuizTableViewController.swift */,
+				4CBC74471BD005380000AFC4 /* AnswerTableViewCell.swift */,
+				4CBC74451BD005280000AFC4 /* QuestionTableViewCell.swift */,
+			);
+			name = ClassroomVC;
+			sourceTree = "<group>";
+		};
 		4CB2B0181BA878D90070DC91 = {
 			isa = PBXGroup;
 			children = (
@@ -124,9 +140,9 @@
 		4CB2B0221BA878D90070DC91 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4CB2B0211BA878D90070DC91 /* NJITQuizApp.app */,
-				4CB2B0351BA878D90070DC91 /* NJITQuizAppTests.xctest */,
-				4CB2B0401BA878DA0070DC91 /* NJITQuizAppUITests.xctest */,
+				4CB2B0211BA878D90070DC91 /* Quiziato™.app */,
+				4CB2B0351BA878D90070DC91 /* Quiziato™.xctest */,
+				4CB2B0401BA878DA0070DC91 /* Quiziato™.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -134,20 +150,21 @@
 		4CB2B0231BA878D90070DC91 /* NJITQuizApp */ = {
 			isa = PBXGroup;
 			children = (
-				4CEE187B1BCBF9350063ED45 /* QorumLogs.swift */,
-				4C40F6121BC6DB1200F4D559 /* QRScanningViewController.swift */,
-				4C067D6C1BB1CDFA0067FA65 /* SocketClient.swift */,
-				4C089AFB1BA9C3E300F6ABDB /* UserAccount.swift */,
 				4CB2B0241BA878D90070DC91 /* AppDelegate.swift */,
+				4CBC744B1BD006940000AFC4 /* Models.swift */,
+				4CB2B06B1BA8878C0070DC91 /* APIManager.swift */,
+				4C067D6C1BB1CDFA0067FA65 /* SocketClient.swift */,
+				4CEE187B1BCBF9350063ED45 /* QorumLogs.swift */,
 				4CB2B0261BA878D90070DC91 /* ViewController.swift */,
 				4CB2B0691BA87F720070DC91 /* LoginViewController.swift */,
-				4CB2B06B1BA8878C0070DC91 /* APIManager.swift */,
-				4CB2B0281BA878D90070DC91 /* Main.storyboard */,
-				4CBC74491BD006110000AFC4 /* ClassroomQuizTableViewController.swift */,
-				4CBC744B1BD006940000AFC4 /* Models.swift */,
-				4CBC74471BD005380000AFC4 /* AnswerTableViewCell.swift */,
-				4CBC74451BD005280000AFC4 /* QuestionTableViewCell.swift */,
+				4CA79C961C036D3900B4B259 /* SessionListTableViewController.swift */,
+				4CA79C9A1C03BAE100B4B259 /* AssignmentsCollectionViewController.swift */,
+				4CA79C9C1C03BB2900B4B259 /* AssignmentCollectionViewCell.swift */,
+				4C40F6121BC6DB1200F4D559 /* QRScanningViewController.swift */,
+				4CA79C981C03B91A00B4B259 /* FixedSplitViewController.swift */,
+				4CA79C951C036CFA00B4B259 /* ClassroomVC */,
 				4CB2B02B1BA878D90070DC91 /* Assets.xcassets */,
+				4CB2B0281BA878D90070DC91 /* Main.storyboard */,
 				4CB2B02D1BA878D90070DC91 /* LaunchScreen.storyboard */,
 				4CB2B0301BA878D90070DC91 /* Info.plist */,
 			);
@@ -198,9 +215,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4CB2B0201BA878D90070DC91 /* NJITQuizApp */ = {
+		4CB2B0201BA878D90070DC91 /* Quiziato™ */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4CB2B0491BA878DA0070DC91 /* Build configuration list for PBXNativeTarget "NJITQuizApp" */;
+			buildConfigurationList = 4CB2B0491BA878DA0070DC91 /* Build configuration list for PBXNativeTarget "Quiziato™" */;
 			buildPhases = (
 				13E14F277BFC78B4C5479777 /* Check Pods Manifest.lock */,
 				4CB2B01D1BA878D90070DC91 /* Sources */,
@@ -213,14 +230,14 @@
 			);
 			dependencies = (
 			);
-			name = NJITQuizApp;
+			name = "Quiziato™";
 			productName = NJITQuizApp;
-			productReference = 4CB2B0211BA878D90070DC91 /* NJITQuizApp.app */;
+			productReference = 4CB2B0211BA878D90070DC91 /* Quiziato™.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4CB2B0341BA878D90070DC91 /* NJITQuizAppTests */ = {
+		4CB2B0341BA878D90070DC91 /* Quiziato™Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4CB2B04C1BA878DA0070DC91 /* Build configuration list for PBXNativeTarget "NJITQuizAppTests" */;
+			buildConfigurationList = 4CB2B04C1BA878DA0070DC91 /* Build configuration list for PBXNativeTarget "Quiziato™Tests" */;
 			buildPhases = (
 				AA4F09BDB34565C9D1F01F06 /* Check Pods Manifest.lock */,
 				4CB2B0311BA878D90070DC91 /* Sources */,
@@ -234,14 +251,14 @@
 			dependencies = (
 				4CB2B0371BA878D90070DC91 /* PBXTargetDependency */,
 			);
-			name = NJITQuizAppTests;
+			name = "Quiziato™Tests";
 			productName = NJITQuizAppTests;
-			productReference = 4CB2B0351BA878D90070DC91 /* NJITQuizAppTests.xctest */;
+			productReference = 4CB2B0351BA878D90070DC91 /* Quiziato™.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		4CB2B03F1BA878DA0070DC91 /* NJITQuizAppUITests */ = {
+		4CB2B03F1BA878DA0070DC91 /* Quiziato™UITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4CB2B04F1BA878DA0070DC91 /* Build configuration list for PBXNativeTarget "NJITQuizAppUITests" */;
+			buildConfigurationList = 4CB2B04F1BA878DA0070DC91 /* Build configuration list for PBXNativeTarget "Quiziato™UITests" */;
 			buildPhases = (
 				FEEEA4BF6F72E1A4A97DCF83 /* Check Pods Manifest.lock */,
 				4CB2B03C1BA878DA0070DC91 /* Sources */,
@@ -254,9 +271,9 @@
 			dependencies = (
 				4CB2B0421BA878DA0070DC91 /* PBXTargetDependency */,
 			);
-			name = NJITQuizAppUITests;
+			name = "Quiziato™UITests";
 			productName = NJITQuizAppUITests;
-			productReference = 4CB2B0401BA878DA0070DC91 /* NJITQuizAppUITests.xctest */;
+			productReference = 4CB2B0401BA878DA0070DC91 /* Quiziato™.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -283,7 +300,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4CB2B01C1BA878D90070DC91 /* Build configuration list for PBXProject "NJITQuizApp" */;
+			buildConfigurationList = 4CB2B01C1BA878D90070DC91 /* Build configuration list for PBXProject "Quiziato™" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -296,9 +313,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4CB2B0201BA878D90070DC91 /* NJITQuizApp */,
-				4CB2B0341BA878D90070DC91 /* NJITQuizAppTests */,
-				4CB2B03F1BA878DA0070DC91 /* NJITQuizAppUITests */,
+				4CB2B0201BA878D90070DC91 /* Quiziato™ */,
+				4CB2B0341BA878D90070DC91 /* Quiziato™Tests */,
+				4CB2B03F1BA878DA0070DC91 /* Quiziato™UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -462,11 +479,14 @@
 				4CB2B06A1BA87F720070DC91 /* LoginViewController.swift in Sources */,
 				4C40F6131BC6DB1200F4D559 /* QRScanningViewController.swift in Sources */,
 				4CBC74481BD005380000AFC4 /* AnswerTableViewCell.swift in Sources */,
+				4CA79C991C03B91A00B4B259 /* FixedSplitViewController.swift in Sources */,
+				4CA79C9D1C03BB2900B4B259 /* AssignmentCollectionViewCell.swift in Sources */,
+				4CA79C9B1C03BAE100B4B259 /* AssignmentsCollectionViewController.swift in Sources */,
 				4CB2B0271BA878D90070DC91 /* ViewController.swift in Sources */,
 				4CEE187C1BCBF9350063ED45 /* QorumLogs.swift in Sources */,
+				4CA79C971C036D3900B4B259 /* SessionListTableViewController.swift in Sources */,
 				4CB2B06C1BA8878C0070DC91 /* APIManager.swift in Sources */,
 				4CBC744A1BD006110000AFC4 /* ClassroomQuizTableViewController.swift in Sources */,
-				4C089AFC1BA9C3E300F6ABDB /* UserAccount.swift in Sources */,
 				4CBC744C1BD006940000AFC4 /* Models.swift in Sources */,
 				4CB2B0251BA878D90070DC91 /* AppDelegate.swift in Sources */,
 				4C067D6D1BB1CDFA0067FA65 /* SocketClient.swift in Sources */,
@@ -494,12 +514,12 @@
 /* Begin PBXTargetDependency section */
 		4CB2B0371BA878D90070DC91 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4CB2B0201BA878D90070DC91 /* NJITQuizApp */;
+			target = 4CB2B0201BA878D90070DC91 /* Quiziato™ */;
 			targetProxy = 4CB2B0361BA878D90070DC91 /* PBXContainerItemProxy */;
 		};
 		4CB2B0421BA878DA0070DC91 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4CB2B0201BA878D90070DC91 /* NJITQuizApp */;
+			target = 4CB2B0201BA878D90070DC91 /* Quiziato™ */;
 			targetProxy = 4CB2B0411BA878DA0070DC91 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -622,7 +642,7 @@
 				INFOPLIST_FILE = NJITQuizApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.selsky.NJITQuizApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Quiziato™";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -642,7 +662,7 @@
 				INFOPLIST_FILE = NJITQuizApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.selsky.NJITQuizApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Quiziato™";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -655,8 +675,8 @@
 				INFOPLIST_FILE = NJITQuizAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.selsky.NJITQuizAppTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NJITQuizApp.app/NJITQuizApp";
+				PRODUCT_NAME = "Quiziato™";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Quiziato™.app/Quiziato™";
 			};
 			name = Debug;
 		};
@@ -668,8 +688,8 @@
 				INFOPLIST_FILE = NJITQuizAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.selsky.NJITQuizAppTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NJITQuizApp.app/NJITQuizApp";
+				PRODUCT_NAME = "Quiziato™";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Quiziato™.app/Quiziato™";
 			};
 			name = Release;
 		};
@@ -680,7 +700,7 @@
 				INFOPLIST_FILE = NJITQuizAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.selsky.NJITQuizAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Quiziato™";
 				TEST_TARGET_NAME = NJITQuizApp;
 				USES_XCTRUNNER = YES;
 			};
@@ -693,7 +713,7 @@
 				INFOPLIST_FILE = NJITQuizAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.selsky.NJITQuizAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Quiziato™";
 				TEST_TARGET_NAME = NJITQuizApp;
 				USES_XCTRUNNER = YES;
 			};
@@ -702,7 +722,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4CB2B01C1BA878D90070DC91 /* Build configuration list for PBXProject "NJITQuizApp" */ = {
+		4CB2B01C1BA878D90070DC91 /* Build configuration list for PBXProject "Quiziato™" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4CB2B0471BA878DA0070DC91 /* Debug */,
@@ -711,7 +731,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4CB2B0491BA878DA0070DC91 /* Build configuration list for PBXNativeTarget "NJITQuizApp" */ = {
+		4CB2B0491BA878DA0070DC91 /* Build configuration list for PBXNativeTarget "Quiziato™" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4CB2B04A1BA878DA0070DC91 /* Debug */,
@@ -720,7 +740,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4CB2B04C1BA878DA0070DC91 /* Build configuration list for PBXNativeTarget "NJITQuizAppTests" */ = {
+		4CB2B04C1BA878DA0070DC91 /* Build configuration list for PBXNativeTarget "Quiziato™Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4CB2B04D1BA878DA0070DC91 /* Debug */,
@@ -729,7 +749,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4CB2B04F1BA878DA0070DC91 /* Build configuration list for PBXNativeTarget "NJITQuizAppUITests" */ = {
+		4CB2B04F1BA878DA0070DC91 /* Build configuration list for PBXNativeTarget "Quiziato™UITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4CB2B0501BA878DA0070DC91 /* Debug */,
