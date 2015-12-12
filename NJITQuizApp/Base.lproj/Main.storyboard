@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15C47a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C47a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -22,24 +22,21 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Quiziato™" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkN-HZ-Jkt">
                                 <rect key="frame" x="242" y="70" width="116" height="21"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.12637259066104889" green="0.12639245390892029" blue="0.12636536359786987" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A better way to quiz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vgg-hF-96A">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="A better way to quiz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vgg-hF-96A">
                                 <rect key="frame" x="224" y="98" width="153" height="21"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PHi-ui-0zC">
-                                <rect key="frame" x="28" y="127" width="544" height="144"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalCentering" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PHi-ui-0zC">
+                                <rect key="frame" x="28" y="127" width="544" height="182"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvT-hF-CwL" customClass="BorderedButton" customModule="Quiziato_" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="544" height="30"/>
-                                        <animations/>
                                         <state key="normal" title="Join a Classroom">
                                             <color key="titleColor" red="0.15410047769546509" green="0.41306763887405396" blue="0.69063264131546021" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -49,7 +46,6 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zpV-cj-Y1s" customClass="BorderedButton" customModule="Quiziato_" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="38" width="544" height="30"/>
-                                        <animations/>
                                         <state key="normal" title="Rejoin Class">
                                             <color key="titleColor" red="0.15410047769546509" green="0.41306763887405396" blue="0.69063264131546021" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -59,7 +55,6 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kb3-to-Q3o" customClass="BorderedButton" customModule="Quiziato_" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="76" width="544" height="30"/>
-                                        <animations/>
                                         <state key="normal" title="View Previous Classes">
                                             <color key="titleColor" red="0.15410047769546509" green="0.41306763887405396" blue="0.69063264131546021" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -69,14 +64,12 @@
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9JP-ce-D2f">
                                         <rect key="frame" x="0.0" y="110" width="544" height="0.0"/>
-                                        <animations/>
                                         <state key="normal" title="Look at previous classes">
                                             <color key="titleColor" red="0.15410047769546509" green="0.41306763887405396" blue="0.69063264131546021" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKO-DI-2yn" customClass="BorderedButton" customModule="Quiziato_" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="114" width="544" height="30"/>
-                                        <animations/>
                                         <state key="normal" title="Logout">
                                             <color key="titleColor" red="0.15410047769546509" green="0.41306763887405396" blue="0.69063264131546021" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -84,11 +77,18 @@
                                             <segue destination="GY3-jC-lOO" kind="presentation" identifier="loginSegue" id="Zh8-zs-efE"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4x-my-ANY" customClass="BorderedButton" customModule="Quiziato_" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="152" width="544" height="30"/>
+                                        <state key="normal" title="¿?"/>
+                                        <connections>
+                                            <segue destination="wJu-BA-vtx" kind="popoverPresentation" popoverAnchorView="O4x-my-ANY" id="sft-af-wRR">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <animations/>
                             </stackView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Vgg-hF-96A" firstAttribute="centerX" secondItem="hkN-HZ-Jkt" secondAttribute="centerX" id="00l-lh-7em"/>
@@ -123,7 +123,6 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vKB-j9-lKV">
                                 <rect key="frame" x="150" y="28" width="300" height="300"/>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="vKB-j9-lKV" secondAttribute="height" multiplier="1:1" id="gVw-6V-7Im"/>
@@ -131,7 +130,6 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geC-52-ko0" customClass="BorderedButton" customModule="Quiziato_" customModuleProvider="target">
                                 <rect key="frame" x="269" y="527" width="62" height="30"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="contentEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
                                 <state key="normal" title="Cancel"/>
@@ -140,7 +138,6 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vKB-j9-lKV" firstAttribute="leading" secondItem="Tyd-gl-qvf" secondAttribute="leadingMargin" constant="40" id="3bT-xx-kDX"/>
@@ -186,25 +183,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iZ6-59-hX5">
-                                <rect key="frame" x="28" y="28" width="544" height="142"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iZ6-59-hX5">
+                                <rect key="frame" x="28" y="28" width="544" height="180"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login to Quiziato™" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvK-Of-Bsh">
                                         <rect key="frame" x="0.0" y="0.0" width="544" height="28"/>
-                                        <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JAf-Ok-abY">
                                         <rect key="frame" x="0.0" y="36" width="544" height="30"/>
-                                        <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ycK-EY-LAS">
                                         <rect key="frame" x="0.0" y="74" width="544" height="30"/>
-                                        <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
@@ -213,7 +207,6 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhO-SP-aSd" customClass="BorderedButton" customModule="Quiziato_" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="544" height="30"/>
-                                                <animations/>
                                                 <state key="normal" title="Login"/>
                                                 <connections>
                                                     <action selector="loginButtonPressed:" destination="GY3-jC-lOO" eventType="touchUpInside" id="sBD-Xr-Xzu"/>
@@ -221,20 +214,25 @@
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PzA-iw-DyV" customClass="BorderedButton" customModule="Quiziato_" customModuleProvider="target">
                                                 <rect key="frame" x="544" y="0.0" width="0.0" height="30"/>
-                                                <animations/>
                                                 <state key="normal" title="Register"/>
                                                 <connections>
                                                     <action selector="registerButtonPressed:" destination="GY3-jC-lOO" eventType="touchUpInside" id="yTS-Ip-uRP"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <animations/>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CI7-VQ-GJh" customClass="BorderedButton" customModule="Quiziato_" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="150" width="544" height="30"/>
+                                        <state key="normal" title="¿?"/>
+                                        <connections>
+                                            <segue destination="wJu-BA-vtx" kind="popoverPresentation" popoverAnchorView="CI7-VQ-GJh" id="WiU-a1-FAP">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <animations/>
                             </stackView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="iZ6-59-hX5" secondAttribute="trailing" constant="8" id="Haj-y8-D0A"/>
@@ -258,36 +256,31 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="RN7-7N-dJD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="aJC-1T-EPi" detailTextLabel="D7F-84-4r3" style="IBUITableViewCellStyleSubtitle" id="Zp9-9m-BG6">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zp9-9m-BG6" id="Lko-xM-CGz">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aJC-1T-EPi">
-                                            <rect key="frame" x="15" y="6" width="31.5" height="19.5"/>
+                                            <rect key="frame" x="15" y="5" width="32" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="D7F-84-4r3">
-                                            <rect key="frame" x="15" y="25.5" width="40.5" height="13.5"/>
+                                            <rect key="frame" x="15" y="25" width="41" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <animations/>
                                 </tableViewCellContentView>
-                                <animations/>
                                 <connections>
                                     <segue destination="sd8-t5-DnJ" kind="showDetail" identifier="showSessionDetailSegue" id="eiZ-WP-nsG"/>
                                 </connections>
@@ -317,7 +310,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hy6-jg-0wk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="ul8-hb-jn9" kind="relationship" relationship="rootViewController" id="PMm-1K-oEY"/>
@@ -334,7 +326,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PzL-Q9-XnD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="2EM-0o-TJM" kind="relationship" relationship="rootViewController" id="jfX-Dm-Eel"/>
@@ -351,7 +342,6 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Sof-21-Rxg">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UzQ-T9-eUh">
                             <size key="itemSize" width="270" height="140"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -368,30 +358,25 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Prompt" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrT-iO-98S">
                                             <rect key="frame" x="8" y="8" width="285" height="39"/>
-                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Your Answer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OaF-dp-ow8">
                                             <rect key="frame" x="8" y="85" width="284" height="39"/>
-                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Correct Answer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFb-ZF-CXQ">
                                             <rect key="frame" x="8" y="47" width="284" height="38"/>
-                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <animations/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <animations/>
                                 <constraints>
                                     <constraint firstItem="OaF-dp-ow8" firstAttribute="top" secondItem="FFb-ZF-CXQ" secondAttribute="bottom" id="1oK-Cu-9mv"/>
                                     <constraint firstItem="xrT-iO-98S" firstAttribute="leading" secondItem="FFb-ZF-CXQ" secondAttribute="leading" id="NoS-eR-7DI"/>
@@ -437,6 +422,59 @@
             </objects>
             <point key="canvasLocation" x="991" y="374"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="YpB-oX-fgm">
+            <objects>
+                <viewController id="wJu-BA-vtx" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FxM-WA-NEm"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yek-DY-du9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KHu-Re-HO2" customClass="TemplateBackgroundView" customModule="Quiziato_" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F00-VT-CK6">
+                                <rect key="frame" x="20" y="28" width="560" height="502"/>
+                                <mutableString key="text">Quiziato™ is an application that makes taking quizzes in class a breeze. 
+
+In order to start using Quiziato™ you must first make an account at https://quiz-prod.herokuapp.com/register.
+
+Once you have created an account, log in. 
+
+When your instructor starts a class, they'll put a large QRCode on screen. Tap 'Join a Classroom' to scan the code and join.
+
+If at any point you need to rejoin an ongoing class, just tap 'Rejoin Class' and you will be whisked away to join the class.
+
+You can view previous classes with the 'View Previous Classes' button</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrw-FH-dB7">
+                                <rect key="frame" x="271" y="546" width="58" height="22"/>
+                                <state key="normal" title="Dismiss"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="custom" customClass="DismissSegue" customModule="Quiziato_" id="W5S-jE-FKq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nrw-FH-dB7" firstAttribute="centerX" secondItem="F00-VT-CK6" secondAttribute="centerX" id="4TE-xL-udl"/>
+                            <constraint firstItem="F00-VT-CK6" firstAttribute="top" secondItem="FxM-WA-NEm" secondAttribute="bottom" constant="8" id="B83-nP-lKa"/>
+                            <constraint firstItem="nrw-FH-dB7" firstAttribute="top" secondItem="F00-VT-CK6" secondAttribute="bottom" constant="8" id="G1A-LV-L0Z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="F00-VT-CK6" secondAttribute="trailing" id="oBD-eS-byb"/>
+                            <constraint firstItem="F00-VT-CK6" firstAttribute="leading" secondItem="KHu-Re-HO2" secondAttribute="leadingMargin" id="qJZ-TK-hET"/>
+                            <constraint firstItem="Yek-DY-du9" firstAttribute="top" secondItem="nrw-FH-dB7" secondAttribute="bottom" constant="32" id="qdI-Lw-Pl6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="tlh-Yv-qHp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B0S-hN-ffl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="991" y="-365"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Dye-YD-flZ">
             <objects>
@@ -444,7 +482,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZDw-oF-h7m">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="gG6-z5-Fcw" kind="relationship" relationship="rootViewController" id="b7C-Cv-CvI"/>
@@ -461,26 +498,23 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="79" sectionHeaderHeight="18" sectionFooterHeight="18" id="5B2-Qo-aze">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuestionCell" rowHeight="79" id="Qlq-54-xQT" customClass="QuestionTableViewCell" customModule="Quiziato_" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="113.5" width="600" height="79"/>
+                                <rect key="frame" x="0.0" y="114" width="600" height="79"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qlq-54-xQT" id="S3e-Hq-7wt">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="78.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="78"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="760" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGa-p4-Msd">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="760" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGa-p4-Msd">
                                             <rect key="frame" x="8" y="8" width="502" height="63"/>
-                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="751" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRd-b5-jr0">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="751" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRd-b5-jr0">
                                             <rect key="frame" x="526" y="8" width="66" height="63"/>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="66" id="KuW-CN-TBd"/>
                                             </constraints>
@@ -489,7 +523,6 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <animations/>
                                     <constraints>
                                         <constraint firstItem="bRd-b5-jr0" firstAttribute="leading" secondItem="TGa-p4-Msd" secondAttribute="trailing" constant="16" id="0CN-5L-vI1"/>
                                         <constraint firstItem="bRd-b5-jr0" firstAttribute="bottom" secondItem="S3e-Hq-7wt" secondAttribute="bottomMargin" id="BZZ-VU-2rn"/>
@@ -500,31 +533,27 @@
                                         <constraint firstItem="TGa-p4-Msd" firstAttribute="leading" secondItem="S3e-Hq-7wt" secondAttribute="leadingMargin" id="pzn-lb-tw9"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <animations/>
                                 <connections>
                                     <outlet property="questionLabel" destination="TGa-p4-Msd" id="EzD-jY-TXp"/>
                                     <outlet property="timeLeftLabel" destination="bRd-b5-jr0" id="15N-jJ-gU8"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AnswerCell" textLabel="eBe-AN-56f" style="IBUITableViewCellStyleDefault" id="h25-dB-NGh" customClass="AnswerTableViewCell" customModule="Quiziato_" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="192.5" width="600" height="79"/>
+                                <rect key="frame" x="0.0" y="193" width="600" height="79"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h25-dB-NGh" id="pHp-f0-rkr">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="78.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="78"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eBe-AN-56f">
-                                            <rect key="frame" x="15" y="0.0" width="570" height="78.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="570" height="78"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <animations/>
                                 </tableViewCellContentView>
-                                <animations/>
                                 <connections>
                                     <outlet property="answerLabel" destination="eBe-AN-56f" id="HIv-Ks-inZ"/>
                                 </connections>
@@ -550,7 +579,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="sft-af-wRR"/>
         <segue reference="o9X-5x-T0e"/>
-        <segue reference="eiZ-WP-nsG"/>
+        <segue reference="VmS-1G-POw"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -11,6 +11,7 @@
 		4A9AA32AD7FC2D0D3F2514A8 /* Pods_NJITQuizAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B72AB8B64C44E4F3D69830 /* Pods_NJITQuizAppTests.framework */; };
 		4C067D6D1BB1CDFA0067FA65 /* SocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C067D6C1BB1CDFA0067FA65 /* SocketClient.swift */; };
 		4C40F6131BC6DB1200F4D559 /* QRScanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40F6121BC6DB1200F4D559 /* QRScanningViewController.swift */; };
+		4C77D40E1C1C9FAA00F8CEE4 /* DismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C77D40D1C1C9FAA00F8CEE4 /* DismissSegue.swift */; };
 		4CA79C971C036D3900B4B259 /* SessionListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA79C961C036D3900B4B259 /* SessionListTableViewController.swift */; };
 		4CA79C991C03B91A00B4B259 /* FixedSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA79C981C03B91A00B4B259 /* FixedSplitViewController.swift */; };
 		4CA79C9B1C03BAE100B4B259 /* AssignmentsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA79C9A1C03BAE100B4B259 /* AssignmentsCollectionViewController.swift */; };
@@ -58,6 +59,7 @@
 		4704EF5A7DE731C5A6353F70 /* Pods_NJITQuizAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NJITQuizAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C067D6C1BB1CDFA0067FA65 /* SocketClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketClient.swift; sourceTree = "<group>"; };
 		4C40F6121BC6DB1200F4D559 /* QRScanningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QRScanningViewController.swift; path = ../QRScanningViewController.swift; sourceTree = "<group>"; };
+		4C77D40D1C1C9FAA00F8CEE4 /* DismissSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DismissSegue.swift; path = NJITQuizApp/DismissSegue.swift; sourceTree = "<group>"; };
 		4CA79C961C036D3900B4B259 /* SessionListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionListTableViewController.swift; sourceTree = "<group>"; };
 		4CA79C981C03B91A00B4B259 /* FixedSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixedSplitViewController.swift; sourceTree = "<group>"; };
 		4CA79C9A1C03BAE100B4B259 /* AssignmentsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentsCollectionViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 		4CB2B0181BA878D90070DC91 = {
 			isa = PBXGroup;
 			children = (
+				4C77D40D1C1C9FAA00F8CEE4 /* DismissSegue.swift */,
 				4CB2B0231BA878D90070DC91 /* NJITQuizApp */,
 				4CB2B0381BA878D90070DC91 /* NJITQuizAppTests */,
 				4CB2B0431BA878DA0070DC91 /* NJITQuizAppUITests */,
@@ -483,6 +486,7 @@
 			files = (
 				4CBC74461BD005280000AFC4 /* QuestionTableViewCell.swift in Sources */,
 				4CB2B06A1BA87F720070DC91 /* LoginViewController.swift in Sources */,
+				4C77D40E1C1C9FAA00F8CEE4 /* DismissSegue.swift in Sources */,
 				4CEDC1021C17884D00A125A5 /* BorderedButton.swift in Sources */,
 				4C40F6131BC6DB1200F4D559 /* QRScanningViewController.swift in Sources */,
 				4CBC74481BD005380000AFC4 /* AnswerTableViewCell.swift in Sources */,
