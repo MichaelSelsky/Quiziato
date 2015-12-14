@@ -76,9 +76,19 @@ class ClassroomQuizTableViewController: UITableViewController, DZNEmptyDataSetDe
             return
         case 1:
             if let question = self.question {
-                self.socketConnection.sendAnswer(question.answers[indexPath.row], question: question)
-                QL2Info("Sending answer \(question.answers[indexPath.row].text) for question \(question.prompt)")
-                self.tableView.userInteractionEnabled = false
+                let alertController = UIAlertController(title: "Are you sure?", message: "Is \"\(question.answers[indexPath.row].text)\" your final answer?", preferredStyle: .Alert)
+                alertController.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (_) -> Void in
+                    self.socketConnection.sendAnswer(question.answers[indexPath.row], question: question)
+                    QL2Info("Sending answer \(question.answers[indexPath.row].text) for question \(question.prompt)")
+                    self.tableView.userInteractionEnabled = false
+                }))
+                
+                alertController.addAction(UIAlertAction(title: "No", style: .Cancel, handler: { (_) -> Void in
+                    self.tableView.selectRowAtIndexPath(nil, animated: true, scrollPosition: UITableViewScrollPosition.None)
+                }))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+                
             }
         default:
             return

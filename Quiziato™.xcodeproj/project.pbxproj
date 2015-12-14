@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F5EC3559326D13913A0ACAF /* Pods_Quiziato_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D7C91B4962FF0CAA4CAC86D /* Pods_Quiziato_Tests.framework */; };
 		245E8042F721E01BC55AFA61 /* Pods_NJITQuizAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4704EF5A7DE731C5A6353F70 /* Pods_NJITQuizAppUITests.framework */; };
+		2FD3D579DE46162D9026F448 /* Pods_Quiziato_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F1D43B241D905E8EEC01BD /* Pods_Quiziato_UITests.framework */; };
 		4A9AA32AD7FC2D0D3F2514A8 /* Pods_NJITQuizAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B72AB8B64C44E4F3D69830 /* Pods_NJITQuizAppTests.framework */; };
 		4C067D6D1BB1CDFA0067FA65 /* SocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C067D6C1BB1CDFA0067FA65 /* SocketClient.swift */; };
 		4C40F6131BC6DB1200F4D559 /* QRScanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40F6121BC6DB1200F4D559 /* QRScanningViewController.swift */; };
@@ -53,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D7C91B4962FF0CAA4CAC86D /* Pods_Quiziato_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quiziato_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		102B7C12A6F10BFAF48A57E6 /* Pods-NJITQuizAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NJITQuizAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NJITQuizAppTests/Pods-NJITQuizAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		165E53B42E5B2DF4B966D89C /* Pods-NJITQuizAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NJITQuizAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NJITQuizAppUITests/Pods-NJITQuizAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		457D3020FDCDF531A12C3301 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -87,6 +90,7 @@
 		4CEDC1031C178A4700A125A5 /* TemplateBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateBackgroundView.swift; sourceTree = "<group>"; };
 		4CEE187B1BCBF9350063ED45 /* QorumLogs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QorumLogs.swift; path = ../QorumLogs.swift; sourceTree = "<group>"; };
 		55B72AB8B64C44E4F3D69830 /* Pods_NJITQuizAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NJITQuizAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		69F1D43B241D905E8EEC01BD /* Pods_Quiziato_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quiziato_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7832CA6398F5DB01D105915F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		885DEE8DD5731DFAE235A31D /* Pods-NJITQuizAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NJITQuizAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NJITQuizAppTests/Pods-NJITQuizAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		B2DD5AEE8B59C0E24247181C /* Pods-NJITQuizAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NJITQuizAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NJITQuizAppUITests/Pods-NJITQuizAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A9AA32AD7FC2D0D3F2514A8 /* Pods_NJITQuizAppTests.framework in Frameworks */,
+				1F5EC3559326D13913A0ACAF /* Pods_Quiziato_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +120,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				245E8042F721E01BC55AFA61 /* Pods_NJITQuizAppUITests.framework in Frameworks */,
+				2FD3D579DE46162D9026F448 /* Pods_Quiziato_UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +223,8 @@
 				C8907EAA4D2B0666734E038E /* Pods.framework */,
 				55B72AB8B64C44E4F3D69830 /* Pods_NJITQuizAppTests.framework */,
 				4704EF5A7DE731C5A6353F70 /* Pods_NJITQuizAppUITests.framework */,
+				0D7C91B4962FF0CAA4CAC86D /* Pods_Quiziato_Tests.framework */,
+				69F1D43B241D905E8EEC01BD /* Pods_Quiziato_UITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -369,7 +377,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NJITQuizAppTests/Pods-NJITQuizAppTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Quiziato™Tests/Pods-Quiziato™Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		11018033C447DFDBACDBA7C9 /* Copy Pods Resources */ = {
@@ -384,7 +392,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NJITQuizAppUITests/Pods-NJITQuizAppUITests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Quiziato™UITests/Pods-Quiziato™UITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		13E14F277BFC78B4C5479777 /* Check Pods Manifest.lock */ = {
@@ -429,7 +437,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NJITQuizAppTests/Pods-NJITQuizAppTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Quiziato™Tests/Pods-Quiziato™Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AA4F09BDB34565C9D1F01F06 /* Check Pods Manifest.lock */ = {

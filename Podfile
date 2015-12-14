@@ -15,10 +15,10 @@ def testing_pods
   pod 'Nimble', '2.0.0-rc.3'
 end
 
-target :NJITQuizAppTests do
+target :Quiziato™Tests do
   testing_pods
 end
 
-target :NJITQuizAppUITests do
+target :Quiziato™UITests do
   testing_pods
 end

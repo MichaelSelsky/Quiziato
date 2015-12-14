@@ -1,6 +1,0 @@
-framework module Pods_NJITQuizAppTests {
-  umbrella header "Pods-NJITQuizAppTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
