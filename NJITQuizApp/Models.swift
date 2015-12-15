@@ -31,7 +31,7 @@ struct Assignment {
 extension Assignment: Decodable {
     static func decode(json: JSON) -> Decoded<Assignment.DecodedType> {
         QL1Debug(json)
-        return curry(Assignment.init) <^> json <| "assignment" <*> json <| "graded" <*> json <| "correct" <*> json <|? ["assignment", "question", "correctAnswer"] <*> json <|? "submission"
+        return curry(Assignment.init) <^> json <| "assignment" <*> json <| "graded" <*> json <| "correct" <*> json <|? ["assignment", "question", "correctOption"] <*> json <|? "submission"
     }
 }
 
@@ -87,7 +87,6 @@ struct Session {
     let date: NSDate
     let id: String
     var course: Course
-//    let assignments
 }
 
 extension Session: Decodable {

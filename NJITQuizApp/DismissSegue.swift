@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Segue for dismissing a view controller
 class DismissSegue: UIStoryboardSegue {
     override func perform() {
         self.sourceViewController.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)

@@ -9,8 +9,9 @@
 import UIKit
 
 private let reuseIdentifier = "Cell"
+ 
 
-class AssignmentsCollectionViewController: UICollectionViewController {
+class AssignmentsCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     var assignments: [Assignment] = [] {
         didSet {
@@ -21,12 +22,8 @@ class AssignmentsCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
         // Register cell classes
         self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        self.collectionView?.backgroundColor = UIColor.lightGrayColor()
 
         // Do any additional setup after loading the view.
     }
@@ -35,16 +32,6 @@ class AssignmentsCollectionViewController: UICollectionViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: UICollectionViewDataSource
 
@@ -67,7 +54,11 @@ class AssignmentsCollectionViewController: UICollectionViewController {
             let ansText = assignment.question.answers.filter({ (mcAns) -> Bool in
                 mcAns.answerID == submittedAns
             }).first
-            cell.yourAnswerLabel.text = "You answered: \(ansText?.text)"
+            if let ans = ansText {
+                cell.yourAnswerLabel.text = "You answered: \(ans.text)"
+            } else {
+                cell.yourAnswerLabel.text = nil
+            }
         } else {
             cell.yourAnswerLabel.text = nil
         }
@@ -76,45 +67,21 @@ class AssignmentsCollectionViewController: UICollectionViewController {
             let ansText = assignment.question.answers.filter({ (mcAns) -> Bool in
                 mcAns.answerID == correctAns
             }).first
-            cell.correctAnswerLabel.text = "The correct answer was: \(ansText?.text)"
+            if let ans = ansText {
+                cell.correctAnswerLabel.text = "The correct answer was: \(ans.text)"
+            } else {
+                cell.correctAnswerLabel = nil
+            }
         } else {
-            cell.yourAnswerLabel.text = nil
+            cell.correctAnswerLabel.text = nil
         }
-        
-        cell.backgroundColor = UIColor.whiteColor()
         
         return cell
     }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(collectionView: UICollectionView, shouldHighlightItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(collectionView: UICollectionView, shouldShowMenuForItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(collectionView: UICollectionView, canPerformAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) -> Bool {
-        return false
-    }
-
-    override func collectionView(collectionView: UICollectionView, performAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) {
     
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let height: CGFloat = 100.0
+        return CGSize(width: collectionView.bounds.size.width - 8, height: height)
     }
-    */
 
 }

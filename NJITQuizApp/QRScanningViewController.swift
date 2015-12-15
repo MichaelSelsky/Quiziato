@@ -101,12 +101,6 @@ class QRScanningViewController: UIViewController, AVCaptureMetadataOutputObjects
             classVC.socketConnection = self.socket
         }
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     @IBAction func cancelButtonTapped(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)

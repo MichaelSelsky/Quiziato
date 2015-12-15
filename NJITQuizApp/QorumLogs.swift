@@ -8,6 +8,7 @@
 
 import Foundation
 
+//TODO: Replace this whole class with HLLogger
 struct QorumLogs {
     /// While enabled QorumOnlineLogs does not work
     static var enabled = false

@@ -82,17 +82,6 @@ class ViewController: UIViewController {
                 }
                 let sessions: [Session]? = decode(j)
                 if let sessions = sessions {
-//                    for s in sessions {
-//                        self.provider.request(.GetGradesForSession(s.id)){ (data, statusCode, response, error) -> () in
-//                            QL1Debug(data)
-//                            do {
-//                                let gradeJSON = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableLeaves) as! [[String: AnyObject]]
-//                            
-//                            } catch {
-//                                QL4Error(error)
-//                            }
-//                        }
-//                    }
                     let currentSessions = sessions.filter({ (session) -> Bool in
                         return !session.ended
                     })
@@ -104,6 +93,13 @@ class ViewController: UIViewController {
                             })
                         }
                         self.socketClient.start()
+                    } else {
+                        let alertController = UIAlertController(title: "No ongoing sessions", message: "Try joining a classroom", preferredStyle: .Alert)
+                        self.presentViewController(alertController, animated: true, completion: { () -> Void in
+                            delay(2.5, closure: { () -> () in
+                                self.dismissViewControllerAnimated(true, completion: nil)
+                            })
+                        })
                     }
                 }
             }

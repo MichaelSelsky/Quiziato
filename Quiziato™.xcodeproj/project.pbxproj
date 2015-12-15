@@ -12,7 +12,8 @@
 		2FD3D579DE46162D9026F448 /* Pods_Quiziato_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F1D43B241D905E8EEC01BD /* Pods_Quiziato_UITests.framework */; };
 		4A9AA32AD7FC2D0D3F2514A8 /* Pods_NJITQuizAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B72AB8B64C44E4F3D69830 /* Pods_NJITQuizAppTests.framework */; };
 		4C067D6D1BB1CDFA0067FA65 /* SocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C067D6C1BB1CDFA0067FA65 /* SocketClient.swift */; };
-		4C40F6131BC6DB1200F4D559 /* QRScanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40F6121BC6DB1200F4D559 /* QRScanningViewController.swift */; };
+		4C1EAB9C1C1F9B7D00933A48 /* QorumLogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1EAB9B1C1F9B7D00933A48 /* QorumLogs.swift */; };
+		4C1EAB9E1C1F9B8600933A48 /* QRScanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1EAB9D1C1F9B8600933A48 /* QRScanningViewController.swift */; };
 		4C77D40E1C1C9FAA00F8CEE4 /* DismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C77D40D1C1C9FAA00F8CEE4 /* DismissSegue.swift */; };
 		4CA79C971C036D3900B4B259 /* SessionListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA79C961C036D3900B4B259 /* SessionListTableViewController.swift */; };
 		4CA79C991C03B91A00B4B259 /* FixedSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA79C981C03B91A00B4B259 /* FixedSplitViewController.swift */; };
@@ -33,7 +34,6 @@
 		4CBC744C1BD006940000AFC4 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBC744B1BD006940000AFC4 /* Models.swift */; };
 		4CEDC1021C17884D00A125A5 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDC1011C17884D00A125A5 /* BorderedButton.swift */; };
 		4CEDC1041C178A4700A125A5 /* TemplateBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDC1031C178A4700A125A5 /* TemplateBackgroundView.swift */; };
-		4CEE187C1BCBF9350063ED45 /* QorumLogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE187B1BCBF9350063ED45 /* QorumLogs.swift */; };
 		F94B911D1CF194013F1D1333 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8907EAA4D2B0666734E038E /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,8 +61,9 @@
 		457D3020FDCDF531A12C3301 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		4704EF5A7DE731C5A6353F70 /* Pods_NJITQuizAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NJITQuizAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C067D6C1BB1CDFA0067FA65 /* SocketClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketClient.swift; sourceTree = "<group>"; };
-		4C40F6121BC6DB1200F4D559 /* QRScanningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QRScanningViewController.swift; path = ../QRScanningViewController.swift; sourceTree = "<group>"; };
-		4C77D40D1C1C9FAA00F8CEE4 /* DismissSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DismissSegue.swift; path = NJITQuizApp/DismissSegue.swift; sourceTree = "<group>"; };
+		4C1EAB9B1C1F9B7D00933A48 /* QorumLogs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QorumLogs.swift; sourceTree = "<group>"; };
+		4C1EAB9D1C1F9B8600933A48 /* QRScanningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScanningViewController.swift; sourceTree = "<group>"; };
+		4C77D40D1C1C9FAA00F8CEE4 /* DismissSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissSegue.swift; sourceTree = "<group>"; };
 		4CA79C961C036D3900B4B259 /* SessionListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionListTableViewController.swift; sourceTree = "<group>"; };
 		4CA79C981C03B91A00B4B259 /* FixedSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixedSplitViewController.swift; sourceTree = "<group>"; };
 		4CA79C9A1C03BAE100B4B259 /* AssignmentsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentsCollectionViewController.swift; sourceTree = "<group>"; };
@@ -88,7 +89,6 @@
 		4CBC744B1BD006940000AFC4 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		4CEDC1011C17884D00A125A5 /* BorderedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
 		4CEDC1031C178A4700A125A5 /* TemplateBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateBackgroundView.swift; sourceTree = "<group>"; };
-		4CEE187B1BCBF9350063ED45 /* QorumLogs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QorumLogs.swift; path = ../QorumLogs.swift; sourceTree = "<group>"; };
 		55B72AB8B64C44E4F3D69830 /* Pods_NJITQuizAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NJITQuizAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69F1D43B241D905E8EEC01BD /* Pods_Quiziato_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quiziato_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7832CA6398F5DB01D105915F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +127,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C1EAB941C1F8F5000933A48 /* View Previous Sessions */ = {
+			isa = PBXGroup;
+			children = (
+				4CA79C961C036D3900B4B259 /* SessionListTableViewController.swift */,
+				4CA79C9A1C03BAE100B4B259 /* AssignmentsCollectionViewController.swift */,
+				4CA79C9C1C03BB2900B4B259 /* AssignmentCollectionViewCell.swift */,
+				4CA79C981C03B91A00B4B259 /* FixedSplitViewController.swift */,
+			);
+			name = "View Previous Sessions";
+			sourceTree = "<group>";
+		};
+		4C1EAB951C1F8F6500933A48 /* Template Views */ = {
+			isa = PBXGroup;
+			children = (
+				4C77D40D1C1C9FAA00F8CEE4 /* DismissSegue.swift */,
+				4CEDC1011C17884D00A125A5 /* BorderedButton.swift */,
+				4CEDC1031C178A4700A125A5 /* TemplateBackgroundView.swift */,
+			);
+			name = "Template Views";
+			sourceTree = "<group>";
+		};
+		4C1EAB961C1F8F8200933A48 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				4C1EAB9B1C1F9B7D00933A48 /* QorumLogs.swift */,
+				4CB2B0281BA878D90070DC91 /* Main.storyboard */,
+				4CB2B02D1BA878D90070DC91 /* LaunchScreen.storyboard */,
+				4CB2B0301BA878D90070DC91 /* Info.plist */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
+		4C1EAB971C1F8F9100933A48 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4CBC744B1BD006940000AFC4 /* Models.swift */,
+				4CB2B06B1BA8878C0070DC91 /* APIManager.swift */,
+				4C067D6C1BB1CDFA0067FA65 /* SocketClient.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		4C1EAB991C1F8FC300933A48 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4CB2B0691BA87F720070DC91 /* LoginViewController.swift */,
+				4C1EAB9D1C1F9B8600933A48 /* QRScanningViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		4C1EAB9A1C1F8FCE00933A48 /* Root VC */ = {
+			isa = PBXGroup;
+			children = (
+				4CB2B0241BA878D90070DC91 /* AppDelegate.swift */,
+				4CB2B0261BA878D90070DC91 /* ViewController.swift */,
+			);
+			name = "Root VC";
+			sourceTree = "<group>";
+		};
 		4CA79C951C036CFA00B4B259 /* ClassroomVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,7 +200,6 @@
 		4CB2B0181BA878D90070DC91 = {
 			isa = PBXGroup;
 			children = (
-				4C77D40D1C1C9FAA00F8CEE4 /* DismissSegue.swift */,
 				4CB2B0231BA878D90070DC91 /* NJITQuizApp */,
 				4CB2B0381BA878D90070DC91 /* NJITQuizAppTests */,
 				4CB2B0431BA878DA0070DC91 /* NJITQuizAppUITests */,
@@ -163,25 +222,14 @@
 		4CB2B0231BA878D90070DC91 /* NJITQuizApp */ = {
 			isa = PBXGroup;
 			children = (
-				4CB2B0241BA878D90070DC91 /* AppDelegate.swift */,
-				4CEDC1011C17884D00A125A5 /* BorderedButton.swift */,
-				4CBC744B1BD006940000AFC4 /* Models.swift */,
-				4CB2B06B1BA8878C0070DC91 /* APIManager.swift */,
-				4C067D6C1BB1CDFA0067FA65 /* SocketClient.swift */,
-				4CEE187B1BCBF9350063ED45 /* QorumLogs.swift */,
-				4CB2B0261BA878D90070DC91 /* ViewController.swift */,
-				4CB2B0691BA87F720070DC91 /* LoginViewController.swift */,
-				4CA79C961C036D3900B4B259 /* SessionListTableViewController.swift */,
-				4CA79C9A1C03BAE100B4B259 /* AssignmentsCollectionViewController.swift */,
-				4CA79C9C1C03BB2900B4B259 /* AssignmentCollectionViewCell.swift */,
-				4C40F6121BC6DB1200F4D559 /* QRScanningViewController.swift */,
-				4CA79C981C03B91A00B4B259 /* FixedSplitViewController.swift */,
+				4C1EAB9A1C1F8FCE00933A48 /* Root VC */,
+				4C1EAB991C1F8FC300933A48 /* Login */,
+				4C1EAB971C1F8F9100933A48 /* Models */,
+				4C1EAB961C1F8F8200933A48 /* Misc */,
+				4C1EAB951C1F8F6500933A48 /* Template Views */,
+				4C1EAB941C1F8F5000933A48 /* View Previous Sessions */,
 				4CA79C951C036CFA00B4B259 /* ClassroomVC */,
 				4CB2B02B1BA878D90070DC91 /* Assets.xcassets */,
-				4CB2B0281BA878D90070DC91 /* Main.storyboard */,
-				4CEDC1031C178A4700A125A5 /* TemplateBackgroundView.swift */,
-				4CB2B02D1BA878D90070DC91 /* LaunchScreen.storyboard */,
-				4CB2B0301BA878D90070DC91 /* Info.plist */,
 			);
 			path = NJITQuizApp;
 			sourceTree = "<group>";
@@ -496,17 +544,17 @@
 				4CB2B06A1BA87F720070DC91 /* LoginViewController.swift in Sources */,
 				4C77D40E1C1C9FAA00F8CEE4 /* DismissSegue.swift in Sources */,
 				4CEDC1021C17884D00A125A5 /* BorderedButton.swift in Sources */,
-				4C40F6131BC6DB1200F4D559 /* QRScanningViewController.swift in Sources */,
 				4CBC74481BD005380000AFC4 /* AnswerTableViewCell.swift in Sources */,
+				4C1EAB9C1C1F9B7D00933A48 /* QorumLogs.swift in Sources */,
 				4CA79C991C03B91A00B4B259 /* FixedSplitViewController.swift in Sources */,
 				4CA79C9D1C03BB2900B4B259 /* AssignmentCollectionViewCell.swift in Sources */,
 				4CA79C9B1C03BAE100B4B259 /* AssignmentsCollectionViewController.swift in Sources */,
 				4CEDC1041C178A4700A125A5 /* TemplateBackgroundView.swift in Sources */,
 				4CB2B0271BA878D90070DC91 /* ViewController.swift in Sources */,
-				4CEE187C1BCBF9350063ED45 /* QorumLogs.swift in Sources */,
 				4CA79C971C036D3900B4B259 /* SessionListTableViewController.swift in Sources */,
 				4CB2B06C1BA8878C0070DC91 /* APIManager.swift in Sources */,
 				4CBC744A1BD006110000AFC4 /* ClassroomQuizTableViewController.swift in Sources */,
+				4C1EAB9E1C1F9B8600933A48 /* QRScanningViewController.swift in Sources */,
 				4CBC744C1BD006940000AFC4 /* Models.swift in Sources */,
 				4CB2B0251BA878D90070DC91 /* AppDelegate.swift in Sources */,
 				4C067D6D1BB1CDFA0067FA65 /* SocketClient.swift in Sources */,

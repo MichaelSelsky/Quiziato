@@ -12,7 +12,6 @@ import SwiftyJSON
 import Locksmith
 import Heimdallr
 
-// TODO: clean up ViewController 
 class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordLoginField: UITextField!
@@ -20,14 +19,12 @@ class LoginViewController: UIViewController {
     var heimdallr: Heimdallr!
     
     let provider = MoyaProvider<API>()
+    
+    //Placeholder login completion. Will be set by calling view controller
     var loginCompletion: (Bool) -> () = { (success) in
         if success {
             
         }
-    }
-    
-    override func viewDidLoad() {
-        
     }
     
     @IBAction func loginButtonPressed(sender: AnyObject) {
@@ -61,11 +58,12 @@ class LoginViewController: UIViewController {
         }
     }
     
+    //TODO: Replace this with a HLLogger
     func showError(){
         let alertController = UIAlertController(title: "Login Failed", message: "Something went wrong", preferredStyle: .Alert)
         let dismissAction = UIAlertAction(title: "Dismiss", style: .Cancel, handler: nil)
         alertController.addAction(dismissAction )
-        self.presentViewController(alertController, animated: true, completion: nil) //TODO: Make this a lot nicer
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
 }
