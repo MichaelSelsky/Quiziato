@@ -95,14 +95,10 @@ class SocketClient {
                             })
                         }
                     }
-                    
-                    
                 }
-                
             })
         }
     }
-    
     
     func parseQuestion(data: NSArray) -> MultipleChoiceQuestion {
         return decode(data.firstObject!)!
@@ -116,8 +112,5 @@ class SocketClient {
     
     func disconnect() {
         self.socket.disconnect(fast: false)
-    }
-    
+    }    
 }
-
-

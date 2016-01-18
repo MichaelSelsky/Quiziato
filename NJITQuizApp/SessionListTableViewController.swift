@@ -81,9 +81,7 @@ class SessionListTableViewController: UITableViewController {
                     print(test?["assignment"]!["question"])
                     
                     let assignments: [Assignment]? = decode(gradeJSON)
-                    
-                    
-                    
+
                     guard let assign = assignments else {
                         QL4Error("Argo error")
                         return
@@ -106,7 +104,6 @@ class SessionListTableViewController: UITableViewController {
                     self.gradedSessions = gSessions.sort({$0.0.date > $1.0.date})
                 }
             }
-            
         }
     }
 
@@ -120,7 +117,6 @@ class SessionListTableViewController: UITableViewController {
         return self.gradedSessions.count
     }
 
-    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
         
@@ -134,7 +130,6 @@ class SessionListTableViewController: UITableViewController {
         let cellColor = UIColor(red: redColor, green: greenColor, blue: 0, alpha: 1)
         
         cell.backgroundColor = cellColor
-        
         
         return cell
     }
@@ -152,8 +147,6 @@ class SessionListTableViewController: UITableViewController {
                 let index = self.tableView.indexPathForCell(senderCell)
                 detailVC.assignments = self.gradedSessions[(index?.row)!].2!
             }
-            
         }
     }
-
 }

@@ -28,8 +28,6 @@ class ViewController: UIViewController {
     
     var heimdallr: Heimdallr!
     
-    
-    
     @IBOutlet weak var roomTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,9 +46,7 @@ class ViewController: UIViewController {
                 }
             })
         }
-        
         provider = MoyaProvider(requestClosure: requestClosure)
-        
     }
     
     override func viewDidAppear(animated: Bool) {

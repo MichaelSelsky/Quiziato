@@ -9,7 +9,6 @@
 import UIKit
 
 class BorderedButton: UIButton {
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.sharedInit()
@@ -26,5 +25,4 @@ class BorderedButton: UIButton {
         self.backgroundColor = self.tintColor
         self.setTitleColor(UIColor.whiteColor(), forState: .Normal)
     }
-
 }

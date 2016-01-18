@@ -10,7 +10,6 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
  
-
 class AssignmentsCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     var assignments: [Assignment] = [] {
@@ -38,7 +37,6 @@ class AssignmentsCollectionViewController: UICollectionViewController, UICollect
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
-
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return assignments.count

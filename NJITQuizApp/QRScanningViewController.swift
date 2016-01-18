@@ -13,7 +13,6 @@ import AVFoundation
 
 class QRScanningViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
-
     var captureSession:AVCaptureSession?
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
     var qrCodeFrameView:UIView?

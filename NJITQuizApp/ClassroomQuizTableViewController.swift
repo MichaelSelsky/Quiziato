@@ -14,7 +14,6 @@ class ClassroomQuizTableViewController: UITableViewController, DZNEmptyDataSetDe
     var className: String?
     var instructorName: String?
 
-
     var question: MultipleChoiceQuestion? {
         didSet {
             self.tableView.reloadData()
@@ -52,9 +51,7 @@ class ClassroomQuizTableViewController: UITableViewController, DZNEmptyDataSetDe
             self.instructorName = instructor.name
             
             self.tableView.reloadData()
-            
         }
-        
     }
 
     @IBAction func dismiss(sender: AnyObject) {
@@ -131,8 +128,6 @@ class ClassroomQuizTableViewController: UITableViewController, DZNEmptyDataSetDe
         }
         return 0
     }
-    
-    
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         switch indexPath.section {
@@ -167,9 +162,7 @@ class ClassroomQuizTableViewController: UITableViewController, DZNEmptyDataSetDe
     func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
         return NSAttributedString(string: self.instructorName ?? "")
     }
-    
-    
-    
+
     func imageAnimationForEmptyDataSet(scrollView: UIScrollView!) -> CAAnimation! {
         let animation = CABasicAnimation(keyPath: "transform")
         animation.fromValue = NSValue(CATransform3D: CATransform3DIdentity)
@@ -180,5 +173,4 @@ class ClassroomQuizTableViewController: UITableViewController, DZNEmptyDataSetDe
         
         return animation
     }
-
 }

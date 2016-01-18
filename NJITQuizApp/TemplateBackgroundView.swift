@@ -8,6 +8,5 @@
 
 import UIKit
 
-class TemplateBackgroundView: UIView {
-    
-}
+// Just to make it easy to set it's background color
+class TemplateBackgroundView: UIView { }

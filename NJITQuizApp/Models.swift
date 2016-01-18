@@ -19,7 +19,6 @@ class Wrapper<T>{
     }
 }
 
-
 struct Assignment {
     let question: MultipleChoiceQuestion
     let graded: Bool

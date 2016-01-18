@@ -17,11 +17,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordLoginField: UITextField!
     
     var heimdallr: Heimdallr!
-    
     let provider = MoyaProvider<API>()
-    
-    //Placeholder login completion. Will be set by calling view controller
-    var loginCompletion: (Bool) -> () = { (success) in
+    var loginCompletion: (Bool) -> () = { (success) in     //Placeholder login completion. Will be set by calling view controller
         if success {
             
         }
@@ -35,7 +32,6 @@ class LoginViewController: UIViewController {
     @IBAction func registerButtonPressed(sender: AnyObject) {
         
     }
-    
     func registerWithUsername(username:String, password: String) {
         provider.request(.Register((username, password))) { (data, statusCode, response, error) -> () in
             print(statusCode, String(data: data!, encoding: NSUTF8StringEncoding))
@@ -57,7 +53,6 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
     //TODO: Replace this with a HLLogger
     func showError(){
         let alertController = UIAlertController(title: "Login Failed", message: "Something went wrong", preferredStyle: .Alert)
@@ -65,5 +60,4 @@ class LoginViewController: UIViewController {
         alertController.addAction(dismissAction )
         self.presentViewController(alertController, animated: true, completion: nil)
     }
-    
 }

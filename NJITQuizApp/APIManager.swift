@@ -55,7 +55,6 @@ extension API: MoyaTarget {
         }
     }
     
-    
     public var parameterEncoding: Moya.ParameterEncoding {
         return .JSON
     }
